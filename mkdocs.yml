@@ -29,37 +29,71 @@ theme:
     - content.code.annotate
 
 markdown_extensions:
-  - pymdownx.arithmatex
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - admonition
   - attr_list
   - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg # Pluging
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
   - search:
       lang: fr
-  - literate-nav:
-      nav_file: SUMMARY.md
   - mkdocs-video
   - blog:
       blog_dir: blog
-      archive_date_format: yyyy
-      authors_profiles_toc: true
-      pagination_per_page: 5
-      pagination_format: "~2~"
-      authors_profiles_toc: true
- 
 
-  # - tags:
-  #     tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
-  #       kwds:
-  #         case: lower
-      
+
+nav:
+  - Accueil: index.md
+
+  - Python:
+    - Introduction: python/0-Introduction.md
+    - Installation de Python: python/1-Installation-Python.md
+    - Terminal: python/2-Terminal.md
+    - Variables: python/3-Variables.md
+    - Commentaires: python/4-Commentaires.md
+    - Nombres: python/5-Nombres.md
+    - Affichage: python/6-Affichage.md
+    - Listes: python/7-Listes.md
+    - Dictionnaires: python/8-Dictionnaires.md
+    - Tuples: python/9-Tuples.md
+    - Sets: python/10-Sets.md
+    - Booléens: python/11-Booleens.md
+    - Opérateurs: python/12-Operateurs.md
+    - Instructions conditionnelles: python/13-Instructions-conditionnelles.md
+    - Boucles for: python/14-Boucles-for.md
+    - Boucles while: python/15-Boucles-while.md
+    - Fonction range: python/16-Fonction-range.md
+    - Fonctions: python/17-Fonctions.md
+    - Compréhension de listes: python/18-Comprehension-de-listes.md
+    - Fichiers: python/19-Fichiers.md
+    - Expressions lambda: python/20-Expressions-lambda.md
+    - Programmation orientée objet: python/21-Programmation-Oriente-Objet.md
+    - Modules et packages: python/22-Modules-et-Packages.md
+    - Erreurs et exceptions: python/23-Erreurs-et-Expressions.md
+    - Décorateurs: python/24-Decorateurs.md
+    - Itérateurs et générateurs: python/25-Iterateurs-et-generateurs.md
+    - Regex et parsing: python/26-Expressions-regulieres-et-parsing.md
+    - Objets immuables et mutables: python/26-Objet-immuables-et-mutables.md
+    - Logging: python/27-Logging.md
+    - PEP 8: python/28-PEP-8.md
+    - Fenêtres graphiques: python/29-Fenetres-graphiques.md
+    - API: python/30-API.md
+    - Conclusion: python/31-Conclusion.md
+
+  - Accessibilité:
+    - Introduction: accessibilite/1-introduction.md
+    - Historique: accessibilite/2-historique.md
+    - RGAA: accessibilite/3-rgaa.md
+    - Téchnologie: accessibilite/4-technologie.md
+    - Structure: accessibilite/5-structure.md
+    - Texte: accessibilite/6-texte.md
+
+  - Blog: blog/index.md

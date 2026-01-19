@@ -2,13 +2,15 @@
 date:
   created: 2024-05-07
 
-categories:
-  - Python
 ---
 
-# Découvrir le langage Python
+# Les premiers pas en Python
 
 Utiliser Replit.com pour apprendre le langage Python est une excellente idée. Replit est une plateforme en ligne qui permet de coder directement dans le navigateur sans avoir besoin d'installer des outils de développement sur votre ordinateur. 
+
+
+<!-- more -->
+
 
 ## 1. Inscription sur Replit.com
 
@@ -44,7 +46,7 @@ Utiliser Replit.com pour apprendre le langage Python est une excellente idée. R
   
   La sortie "Hello, World!" devrait apparaître dans la console.
 
-## 2. Les premiers pas en Python
+## 2. Découvrir le language Python
 Python est un langage de programmation populaire et puissant qui peut être utilisé pour une variété de tâches, telles que la création de scripts, la construction de sites web, le développement de logiciels et la data science. Il est facile à apprendre et à comprendre, ce qui en fait un choix idéal pour les débutants et les professionnels expérimentés.
 
 ### 2.1 Les chaines de caractères
