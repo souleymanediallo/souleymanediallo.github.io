@@ -29,7 +29,7 @@ jobs:
         run: python3 -m pip install -r requirements.txt
 
       - name: Create CNAME file
-        run: echo 'www.academy221.com' > docs/CNAME
+        run: echo 'https://souleymandiallo.github.io/' > docs/CNAME
 
       - name: Deploy Python3 and mkdocs🚀
         run: python3 -m mkdocs gh-deploy --force
