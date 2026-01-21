@@ -50,5 +50,3 @@ Autre exemple, mettre un ID sur un élément, puis de le référencer en tant qu
 Exemple : signaler à un lecteur d'écran que l'entrée de formulaire est actuellement désactivée
 
 ```aria-disabled="true"```
-
-## Le Texte
