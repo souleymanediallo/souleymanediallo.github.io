@@ -11,7 +11,7 @@ ainsi qu'un blog où je partage mes expériences, réflexions et solutions prati
 - Documenter des concepts avancés et bonnes pratiques
 - Construire une communauté d'apprentissage
 
-## 📚 Contenu
+## Contenu
 
 Le site couvre les thématiques suivantes :
 
@@ -25,7 +25,7 @@ Le site couvre les thématiques suivantes :
 - **Tests** : Tests unitaires, automatisés et TDD
 - **Exercices pratiques** : Avec solutions commentées
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 - MkDocs
 - Python
