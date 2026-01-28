@@ -284,7 +284,7 @@ class CompteBancaire:
             print(transaction)
 
 # Utilisation
-compte = CompteBancaire("Alice", 1000)
+compte = CompteBancaire("Jules", 1000)
 compte.deposer(500)
 compte.retirer(200)
 print(f"Solde: {compte.obtenir_solde()}€")  # Solde: 1300€
@@ -714,6 +714,8 @@ for livre in biblio:
 ```
 
 ### Context Manager (Gestionnaire de contexte)
+Les context managers permettent de gérer des ressources (fichiers, connexions réseau, etc.) de manière sûre et efficace, 
+en s'assurant qu'elles sont correctement libérées après utilisation.
 
 ```python
 class FichierTexte:
