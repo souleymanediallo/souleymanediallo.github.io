@@ -5,9 +5,10 @@ date:
 ---
 # Créer un mini-site web basé sur une API REST avec Flask
 On va créer un mini-site web en Python qui interroge une API publique et affiche les résultats.
-On utilisera le micro-framework Flask pour le serveur web. et la librairie requests pour faire les requêtes HTTP.
+On utilisera le micro-framework Flask pour le serveur web et la librairie requests pour faire les requêtes HTTP.
 On utilisera une API publique gratuite, sans clé API, et simple à utiliser (<a href="https://www.openbrewerydb.org/documentation#random-brewery" target="_blank">Open Brewery DB</a>)
 
+<!-- more -->
 
 ## Objectif
 
@@ -18,8 +19,6 @@ Créer un petit site web en Python :
 - affiche une page détail (un élément)
 - gère les erreurs, la pagination, et une structure de projet propre
   
-<!-- more -->
-
 ## Ce que tu vas apprendre
 - Différence entre **client** (ton site) et **serveur** (API)
 - Requêtes **GET** + paramètres de query string (`?by_city=...&page=...`)

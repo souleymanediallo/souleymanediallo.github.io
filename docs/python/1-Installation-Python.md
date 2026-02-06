@@ -73,7 +73,6 @@ Avant de cliquer "Install now", **activez cette case** :
 
 Python est installé sur Windows !
 
-
 ## 4 — Installation sur macOS
 
 ### Option A : Via le site officiel (recommandée pour les débutants)
@@ -95,9 +94,7 @@ brew install python
 
 Python est installé sur macOS !
 
-
 ## 5 — Installation sur Linux
-
 Linux est un peu plus divers car il existe beaucoup de "distributions" (Ubuntu, Fedora, Arch…). 
 Voici les commandes pour les plus courantes.
 
@@ -124,7 +121,6 @@ sudo pacman -S python
 
 Python est installé sur Linux !
 
-
 ## 6 — Vérifier l'installation
 
 Après l'installation, vérifions que tout fonctionne.
@@ -135,6 +131,7 @@ Ouvrez un Terminal et tapez :
 python --version       # Windows
 python3 --version      # macOS / Linux
 ```
+
 Vous devriez voir : `Python 3.12.X` (ou une version récente)
 
 ### Étape 2 : Lancer Python en mode interactif
