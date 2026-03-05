@@ -1,2 +1,0 @@
-# Projet Moyen
-## Coming soon

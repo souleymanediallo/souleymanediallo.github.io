@@ -1,80 +1,194 @@
-# Les Nombres
+# Les Nombres en Python
 
-Python propose deux grands types de nombres pour représenter des valeurs numériques : les nombres entiers et les nombres décimaux. Comprendre la différence entre ces deux types est essentiel, car Python ne les traite pas exactement de la même manière.
+## 1. Deux grandes familles de nombres
 
-## Les nombres entiers
+Python distingue deux types de nombres fondamentaux :
 
-Un nombre entier est un nombre sans virgule, qu'il soit positif, négatif ou égal à zéro. En Python, ce type de donnée s'appelle `int` (abréviation de *integer*, qui signifie « entier » en anglais).
+| Type | Nom Python | Description | Exemples |
+|------|-----------|-------------|---------|
+| Entier | `int` | Nombre sans virgule | `-5`, `0`, `42`, `1000` |
+| Décimal | `float` | Nombre avec virgule | `-2.5`, `0.0`, `3.14`, `1.0` |
 
-Voici quelques exemples de déclarations de variables entières :
+> **Pourquoi cette distinction ?** Entiers et décimaux sont stockés différemment en mémoire. Un `int` est exact, tandis qu'un `float` est une approximation (c'est la nature du calcul en virgule flottante).
+
+## 2. Les entiers — `int`
+
+Un entier est un nombre **sans partie décimale** : positif, négatif ou nul.
 
 ```python
->>> x = 10  # x est une variable entière avec la valeur 10
->>> y = -5  # y est une variable entière avec la valeur -5
->>> z = 0   # z est une variable entière avec la valeur 0
+age = 25          # entier positif
+temperature = -3  # entier négatif
+score = 0         # zéro
+population = 8_100_000_000  # les _ améliorent la lisibilité (Python 3.6+)
 ```
 
-Pour vérifier le type d'une variable, on peut utiliser la fonction `type()` :
+Pour vérifier le type d'une variable, on utilise `type()` :
 
 ```python
->>> type(x)
+>>> type(age)
 <class 'int'>
 ```
 
-## Les nombres décimaux
+### À retenir
 
-Un nombre décimal est un nombre qui comporte une virgule (représentée par un point en Python). En Python, ce type s'appelle `float` (abréviation de *floating point number*, qui signifie « nombre à virgule flottante »).
+- Un `int` peut être aussi grand que la mémoire le permet (pas de limite fixe en Python).
+- Écrire `25` sans point → c'est un `int`.
 
-Voici quelques exemples de déclarations de variables décimales :
 
-```python
->>> x = 3.14  # x est une variable flottante avec la valeur 3.14
->>> y = -2.5  # y est une variable flottante avec la valeur -2.5
->>> z = 0.0   # z est une variable flottante avec la valeur 0.0
-```
+## 3. Les décimaux — `float`
 
-A noter : même si la valeur est `0.0`, Python considère cette variable comme un `float` et non comme un `int`. La simple présence du point fait toute la différence.
-
-## Opérations mathématiques
-
-Python permet d'effectuer les opérations mathématiques courantes directement sur les nombres. Voici les quatre opérations de base :
-
-| Opération      | Symbole | Exemple     | Résultat |
-|----------------|---------|-------------|----------|
-| Addition       | `+`     | `10 + 3.14` | `13.14`  |
-| Soustraction   | `-`     | `10 - 3.14` | `6.86`   |
-| Multiplication | `*`     | `10 * 3.14` | `31.4`   |
-| Division       | `/`     | `10 / 3.14` | `3.1847…`|
-
-Voici ces opérations en pratique :
+Un décimal est un nombre **avec un point** (Python utilise le point `.`, pas la virgule `,`).
 
 ```python
->>> x = 10
->>> y = 3.14
->>> z = x + y  # addition : z vaut 13.14
->>> a = x - y  # soustraction : a vaut 6.86
->>> b = x * y  # multiplication : b vaut 31.4
->>> c = x / y  # division : c vaut 3.1847133757961783
+prix = 9.99       # float positif
+poids = -0.5      # float négatif
+pi = 3.14159      # float positif
+vide = 0.0        # aussi un float, malgré la valeur zéro !
 ```
-
-Un point important à retenir : lorsqu'une opération mélange un `int` et un `float`, le résultat est toujours un `float`. Python convertit automatiquement le nombre entier en décimal avant de faire le calcul.
-
-## Convertir une variable
-
-Il arrive fréquemment de devoir passer d'un type numérique à un autre. Python met à disposition deux fonctions de conversion :
-
-- `int()` transforme un nombre décimal en entier en supprimant la partie après la virgule (sans arrondir).
-- `float()` transforme un nombre entier en décimal en ajoutant `.0` à la fin.
 
 ```python
->>> x = 10
->>> y = 3.14
->>> z = int(y)    # z vaut 3 (la partie décimale est simplement supprimée)
->>> a = float(x)  # a vaut 10.0
+>>> type(prix)
+<class 'float'>
+>>> type(0.0)
+<class 'float'>   # ← même 0.0 est un float, pas un int !
 ```
 
-Attention : la conversion avec `int()` ne fait pas un arrondi. Elle tronque simplement la partie décimale. Par exemple, `int(3.99)` donne `3` et non `4`.
+### Piège classique
 
-Pour aller plus loin, la documentation officielle de Python détaille le fonctionnement des types numériques :
+```python
+>>> type(0)
+<class 'int'>
 
-- [Types numériques — int, float, complex :octicons-link-external-16:](https://docs.python.org/fr/3/library/stdtypes.html#numeric-types-int-float-complex){:target="_blank"}
+>>> type(0.0)
+<class 'float'>   # Le simple point change tout !
+```
+
+> La présence du `.` dans le code source est ce qui détermine le type, pas la valeur.
+
+## 4. Opérations mathématiques
+
+Python supporte toutes les opérations classiques :
+
+| Opération | Symbole | Exemple | Résultat |
+|-----------|---------|---------|---------|
+| Addition | `+` | `10 + 3` | `13` |
+| Soustraction | `-` | `10 - 3` | `7` |
+| Multiplication | `*` | `10 * 3` | `30` |
+| Division | `/` | `10 / 3` | `3.3333...` |
+| Division entière | `//` | `10 // 3` | `3` |
+| Modulo (reste) | `%` | `10 % 3` | `1` |
+| Puissance | `**` | `2 ** 8` | `256` |
+
+```python
+x = 10
+y = 3
+
+print(x + y)   # 13   → int
+print(x - y)   # 7    → int
+print(x * y)   # 30   → int
+print(x / y)   # 3.3333333333333335  → TOUJOURS un float !
+print(x // y)  # 3    → int (division sans reste)
+print(x % y)   # 1    → int (reste de la division)
+print(x ** y)  # 1000 → int (10 à la puissance 3)
+```
+
+### Règle de la contamination par le `float`
+
+Dès qu'une opération mélange un `int` et un `float`, le résultat est **toujours** un `float` :
+
+```python
+>>> 10 + 3.0
+13.0        # int + float → float
+
+>>> 10 * 1.0
+10.0        # int * float → float
+
+>>> 10 / 2
+5.0         # La division / donne TOUJOURS un float, même si le résultat est entier !
+```
+
+## 5. Convertir entre les types
+
+Python fournit deux fonctions de conversion :
+
+### `int()` — Convertir en entier
+
+```python
+>>> int(3.99)   # Tronque (ne arrondit PAS)
+3
+
+>>> int(3.14)
+3
+
+>>> int(-2.9)   # Attention, tronque vers zéro !
+-2
+
+>>> int("42")   # Peut aussi convertir une chaîne de caractères
+42
+```
+
+> **`int()` tronque, il n'arrondit pas !**
+> `int(3.99)` donne `3`, pas `4`.
+> Pour arrondir, utilisez `round()`.
+
+### `float()` — Convertir en décimal
+
+```python
+>>> float(10)
+10.0
+
+>>> float(-5)
+-5.0
+
+>>> float("3.14")   # Peut aussi convertir une chaîne
+3.14
+```
+
+### `round()` — Arrondir correctement
+
+```python
+>>> round(3.14159, 2)   # Arrondi à 2 décimales
+3.14
+
+>>> round(2.5)          # Arrondi au plus proche
+2                       # (Python utilise l'arrondi bancaire : vers le pair)
+
+>>> round(3.5)
+4
+```
+
+## 6. Résumé visuel
+
+```
+       TYPES DE NOMBRES EN PYTHON
+       ───────────────────────────
+
+   int                     float
+  ──────                  ──────
+  0, 1, -5, 100      0.0, 3.14, -2.5
+
+  ↕ conversion            ↕ conversion
+  int(3.14) → 3        float(10) → 10.0
+  (tronque !)          (ajoute .0)
+
+       OPÉRATIONS MIXTES
+       ─────────────────
+  int OP int → int  (sauf / qui donne float)
+  int OP float → float  (toujours)
+  float OP float → float  (toujours)
+```
+
+## 7. Bonnes pratiques
+
+- Utilisez `int` pour les comptages, indices, identifiants — tout ce qui est naturellement entier.
+- Utilisez `float` pour les mesures, prix, coordonnées — tout ce qui peut avoir une partie décimale.
+- Préférez `//` à `/` quand vous voulez un résultat entier (ex. : partage d'un gâteau en parts égales).
+- N'utilisez jamais `int()` pour arrondir : utilisez `round()`.
+
+
+## 8. Pour aller plus loin
+
+- [Documentation officielle — Types numériques](https://docs.python.org/fr/3/library/stdtypes.html#numeric-types-int-float-complex)
+- Python propose aussi les **complexes** (`complex`) : `2 + 3j`, mais ils sont rarement utilisés en dehors des mathématiques avancées.
+- Le module [`decimal`](https://docs.python.org/fr/3/library/decimal.html) permet des calculs décimaux **exactement précis** (utile en finance).
+- Le module [`fractions`](https://docs.python.org/fr/3/library/fractions.html) permet de manipuler des fractions comme `1/3` sans perte de précision.
