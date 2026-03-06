@@ -1,45 +1,91 @@
 # L'Affichage
-En Python, vous pouvez utiliser la fonction `print()` pour afficher du texte ou des valeurs sur la sortie standard (généralement la console).
 
-Voici quelques exemples d'utilisation de la fonction print() :
-```
->>> print("Bonjour !")  # affiche "Bonjour !"
->>> print(42)  # affiche 42
->>> print(3.14)  # affiche 3.14
->>> print("La réponse est", 42)  # affiche "La réponse est 42"
->>> print("Pi vaut environ", 3.14)  # affiche "Pi vaut environ 3.14"
+En Python, la fonction `print()` permet d'afficher du texte ou des valeurs dans la console. C'est l'un des premiers outils que l'on utilise pour interagir avec un programme.
+
+## La fonction `print()`
+
+`print()` accepte un ou plusieurs arguments séparés par des virgules. Elle les convertit automatiquement en texte et les affiche côte à côte, séparés par un espace.
+
+```python
+>>> print("Bonjour !")          # affiche : Bonjour !
+>>> print(42)                   # affiche : 42
+>>> print(3.14)                 # affiche : 3.14
+>>> print("La réponse est", 42) # affiche : La réponse est 42
 ```
 
-La fonction `print()` accepte un ou plusieurs arguments, qui peuvent être des chaînes de caractères, des nombres ou d'autres types de données. Elle les convertit en chaînes de caractères et les affiche séparées par des espaces.
+On peut également afficher le résultat d'un calcul :
 
-Vous pouvez également utiliser la fonction `print()` pour afficher des résultats de calculs mathématiques :
-```
+```python
 >>> x = 10
 >>> y = 3
 >>> z = x / y
->>> print("Le résultat de", x, "/", y, "est", z)  # affiche "Le résultat de 10 / 3 est 3.3333333333333335"
+>>> print("Le résultat de", x, "/", y, "est", z)
+Le résultat de 10 / 3 est 3.3333333333333335
 ```
 
-## function format
-Il est également possible de formatter l'affichage en utilisant la fonction `format()` de Python ou la syntaxe de formatage de chaîne (f-string) introduite en Python 3.6. Voici quelques exemples :
-```
+## La méthode `format()`
+
+La méthode `format()` permet d'insérer des valeurs dans une chaîne de caractères à l'aide de marqueurs `{}`. Chaque marqueur est remplacé, dans l'ordre, par les arguments passés à `format()`.
+
+```python
 >>> x = 10
 >>> y = 3
 >>> z = x / y
->>> print("Le résultat de {} / {} est {}".format(x, y, z))  # affiche "Le résultat de 10 / 3 est 3.3333333333333335"
+>>> print("Le résultat de {} / {} est {}".format(x, y, z))
+Le résultat de 10 / 3 est 3.3333333333333335
 ```
 
-## formatage de chaîne
-La syntaxe de formatage de chaîne `(f-string)` est une syntaxe concise et pratique pour formatter l'affichage en Python. Elle permet de remplacer des placeholders dans une chaîne de caractères par des valeurs en utilisant la syntaxe {nom_de_variable} ou `{nom_de_variable:format}`.
-```
+Cette approche est lisible mais devient vite encombrante quand le nombre de variables augmente.
+
+## Les f-strings
+
+Introduites en Python 3.6, les f-strings (chaînes formatées) sont la façon la plus moderne et la plus concise de construire un affichage. Il suffit de préfixer la chaîne avec `f` et d'écrire les variables directement entre accolades `{}`.
+
+```python
 >>> x = 10
 >>> y = 3.14
 >>> z = "hello"
 >>> a = True
 >>> b = [1, 2, 3]
 
->>> print(x, y, z)  # affiche "10 3.14 hello"
->>> print(f"{x} {y} {z}")  # affiche "10 3.14 hello"
->>> print(f"{x=} {y=} {z=}")  # affiche "x=10 y=3.14 z='hello'"
->>> print(f"{a=} {b=}")  # affiche "a=True b=[1, 2, 3]"
+>>> print(f"{x} {y} {z}")      # affiche : 10 3.14 hello
+>>> print(f"{x=} {y=} {z=}")   # affiche : x=10 y=3.14 z='hello'
+>>> print(f"{a=} {b=}")        # affiche : a=True b=[1, 2, 3]
 ```
+
+La syntaxe `{variable=}` est particulièrement utile pour le débogage : elle affiche à la fois le nom de la variable et sa valeur.
+
+## Comparaison des trois approches
+
+Pour afficher `"x vaut 10 et y vaut 3.14"` :
+
+```python
+x = 10
+y = 3.14
+
+# Avec print() simple
+print("x vaut", x, "et y vaut", y)
+
+# Avec format()
+print("x vaut {} et y vaut {}".format(x, y))
+
+# Avec f-string
+print(f"x vaut {x} et y vaut {y}")
+```
+
+Les trois affichent le même résultat. En pratique, les f-strings sont aujourd'hui la méthode recommandée : elles sont plus lisibles et moins sujettes aux erreurs.
+
+## Pour aller plus loin
+
+Les f-strings permettent aussi d'appliquer des formats directement sur les valeurs, comme limiter le nombre de décimales affichées :
+
+```python
+>>> z = 10 / 3
+>>> print(f"Résultat : {z:.2f}")   # affiche : Résultat : 3.33
+>>> print(f"Résultat : {z:.4f}")   # affiche : Résultat : 3.3333
+```
+
+La syntaxe `{variable:.2f}` signifie : afficher la variable comme un nombre décimal avec 2 chiffres après la virgule.
+
+- [Documentation officielle — print()](https://docs.python.org/fr/3/library/functions.html#print)
+- [Documentation officielle — f-strings](https://docs.python.org/fr/3/reference/lexical_analysis.html#f-strings)
