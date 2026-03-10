@@ -1,0 +1,2421 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Souleymane Diallo">
+      
+      
+        <link rel="canonical" href="https://souleymanediallo.github.io/python/7-Listes/">
+      
+      
+        <link rel="prev" href="../6-Affichage/">
+      
+      
+        <link rel="next" href="../8-Dictionnaires/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Listes - Développeur Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#les-listes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Développeur Python" class="md-header__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Développeur Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Listes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0-Introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../accessibilite/1-introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Accessibilité
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Développeur Python" class="md-nav__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Développeur Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Installation-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Commentaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commentaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-Nombres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Affichage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Listes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Listes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creer-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Créer une liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceder-aux-elements-dune-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Accéder aux éléments d'une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Accéder aux éléments d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lindexation-positive" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'indexation positive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lindexation-negative" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'indexation négative
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-le-slicing-acceder-a-une-portion-de-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Le slicing : accéder à une portion de liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-modifier-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modifier une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modifier une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modifier-un-element-existant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifier un élément existant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifier-plusieurs-elements-avec-le-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifier plusieurs éléments avec le slicing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ajouter-des-elements-a-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ajouter des éléments à une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ajouter des éléments à une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode append()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode insert()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode extend()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-supprimer-des-elements-dune-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Supprimer des éléments d'une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Supprimer des éléments d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode remove()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode pop()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linstruction-del" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'instruction del
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode clear()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-parcourir-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Parcourir une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Parcourir une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-une-boucle-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec une boucle for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-enumerate-pour-avoir-lindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec enumerate() pour avoir l'index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-une-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec une boucle while
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-les-methodes-utiles-sur-les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Les méthodes utiles sur les listes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Les méthodes utiles sur les listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connaitre-la-taille-dune-liste-len" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connaître la taille d'une liste : len()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trier-une-liste-sort-et-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trier une liste : sort() et sorted()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverser-une-liste-reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverser une liste : reverse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compter-les-occurrences-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compter les occurrences : count()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trouver-lindex-dun-element-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trouver l'index d'un élément : index()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifier-la-presence-dun-element-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier la présence d'un élément : in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-les-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Les listes imbriquées
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-la-comprehension-de-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. La compréhension de liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Dictionnaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Tuples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tuples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Booleens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Booléens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-Operateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opérateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-Instructions-conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instructions conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-Boucles-for/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles for
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-Boucles-while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-Fonction-range/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonction range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-Fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-Comprehension-de-listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compréhension de listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Fichiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-Expressions-lambda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressions lambda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-Programmation-oriente-objet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-Modules-et-Packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules et packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-Erreurs-et-Expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erreurs et exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-Decorateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Décorateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-Iterateurs-et-generateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Itérateurs et générateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Expressions-regulieres-et-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regex et parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Objet-immuables-et-mutables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objets immuables et mutables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-Logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-PEP-8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEP 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-Fenetres-graphiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenêtres graphiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accessibilité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Accessibilité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/1-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/2-historique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/3-rgaa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGAA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/4-technologie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Téchnologie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/5-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/6-texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creer-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Créer une liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-acceder-aux-elements-dune-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Accéder aux éléments d'une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Accéder aux éléments d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lindexation-positive" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'indexation positive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lindexation-negative" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'indexation négative
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-le-slicing-acceder-a-une-portion-de-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Le slicing : accéder à une portion de liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-modifier-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modifier une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modifier une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modifier-un-element-existant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifier un élément existant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifier-plusieurs-elements-avec-le-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifier plusieurs éléments avec le slicing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ajouter-des-elements-a-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ajouter des éléments à une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ajouter des éléments à une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode append()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode insert()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode extend()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-supprimer-des-elements-dune-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Supprimer des éléments d'une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Supprimer des éléments d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode remove()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode pop()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linstruction-del" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'instruction del
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-methode-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      La méthode clear()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-parcourir-une-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Parcourir une liste
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Parcourir une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-une-boucle-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec une boucle for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-enumerate-pour-avoir-lindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec enumerate() pour avoir l'index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-une-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec une boucle while
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-les-methodes-utiles-sur-les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Les méthodes utiles sur les listes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Les méthodes utiles sur les listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connaitre-la-taille-dune-liste-len" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connaître la taille d'une liste : len()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trier-une-liste-sort-et-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trier une liste : sort() et sorted()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverser-une-liste-reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverser une liste : reverse()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compter-les-occurrences-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compter les occurrences : count()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trouver-lindex-dun-element-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trouver l'index d'un élément : index()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifier-la-presence-dun-element-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier la présence d'un élément : in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-les-listes-imbriquees" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Les listes imbriquées
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-la-comprehension-de-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. La compréhension de liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="les-listes">Les listes<a class="headerlink" href="#les-listes" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>En Python, une liste est l'une des structures de données les plus utilisées. Elle permet de regrouper plusieurs valeurs dans une seule variable, dans un ordre précis. Contrairement à certains autres langages de programmation, Python offre une grande flexibilité avec les listes : elles peuvent changer de taille, contenir des types de données variés, et sont manipulables grâce à de nombreuses méthodes intégrées.</p>
+<p>Comprendre les listes est une étape fondamentale pour tout programmeur Python, car elles interviennent dans presque tous les types de programmes : traitement de données, gestion d'entrées utilisateur, algorithmes de tri, et bien plus encore.</p>
+<h2 id="1-creer-une-liste">1. Créer une liste<a class="headerlink" href="#1-creer-une-liste" title="Permanent link">¶</a></h2>
+<p>Une liste se définit avec des crochets <code>[]</code>, et ses éléments sont séparés par des virgules. On peut créer une liste vide, une liste de nombres, une liste de chaînes de caractères, ou même une liste qui mélange différents types.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Une liste vide</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Une liste de nombres entiers</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Une liste de chaînes de caractères</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Une liste mixte</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">divers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s1">'bonjour'</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</code></pre></div>
+<p>Il est important de noter que l'ordre des éléments dans une liste est préservé. Cela signifie que <code>['pomme', 'banane']</code> et <code>['banane', 'pomme']</code> sont deux listes différentes en Python.</p>
+<h2 id="2-acceder-aux-elements-dune-liste">2. Accéder aux éléments d'une liste<a class="headerlink" href="#2-acceder-aux-elements-dune-liste" title="Permanent link">¶</a></h2>
+<h3 id="lindexation-positive">L'indexation positive<a class="headerlink" href="#lindexation-positive" title="Permanent link">¶</a></h3>
+<p>Python numérote les éléments d'une liste à partir de zéro. On appelle ce principe l'indexation base zéro. Ainsi, le premier élément se trouve à l'index 0, le deuxième à l'index 1, et ainsi de suite.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Affiche : pomme</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche : banane</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Affiche : mangue</span>
+</code></pre></div>
+<p>Si l'on tente d'accéder à un index qui n'existe pas, Python lèvera une erreur de type <code>IndexError</code>. Par exemple, avec une liste de 4 éléments, l'index 4 est invalide car le dernier index valide est 3.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># Erreur : IndexError: list index out of range</span>
+</code></pre></div>
+<h3 id="lindexation-negative">L'indexation négative<a class="headerlink" href="#lindexation-negative" title="Permanent link">¶</a></h3>
+<p>Python permet également d'accéder aux éléments depuis la fin de la liste grâce aux index négatifs. L'index -1 désigne le dernier élément, -2 l'avant-dernier, et ainsi de suite. C'est particulièrement utile lorsqu'on ne connaît pas la taille exacte d'une liste.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche : mangue</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche : orange</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># Affiche : pomme</span>
+</code></pre></div>
+<h2 id="3-le-slicing-acceder-a-une-portion-de-liste">3. Le slicing : accéder à une portion de liste<a class="headerlink" href="#3-le-slicing-acceder-a-une-portion-de-liste" title="Permanent link">¶</a></h2>
+<p>Le slicing (ou découpage) permet d'extraire une sous-liste à partir d'une liste existante. La syntaxe est la suivante : <code>liste[debut:fin]</code>. Python retourne alors les éléments depuis l'index <code>debut</code> jusqu'à l'index <code>fin</code> exclu.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">,</span> <span class="s1">'kiwi'</span><span class="p">]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Affiche : ['banane', 'orange']</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>   <span class="c1"># Affiche : ['pomme', 'banane']</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>    <span class="c1"># Affiche : ['orange', 'mangue', 'kiwi']  (du 3ème jusqu'à la fin)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>    <span class="c1"># Affiche : ['pomme', 'banane', 'orange'] (du début jusqu'au 3ème)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[:])</span>     <span class="c1"># Affiche toute la liste (copie)</span>
+</code></pre></div>
+<p>Il est également possible de définir un pas dans le slicing avec la syntaxe <code>liste[debut:fin:pas]</code>. Un pas de 2 permet par exemple de sélectionner un élément sur deux.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>   <span class="c1"># Affiche : [0, 2, 4, 6, 8]  (un élément sur deux)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche : [1, 3, 5, 7, 9]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche : [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  (liste inversée)</span>
+</code></pre></div>
+<h2 id="4-modifier-une-liste">4. Modifier une liste<a class="headerlink" href="#4-modifier-une-liste" title="Permanent link">¶</a></h2>
+<h3 id="modifier-un-element-existant">Modifier un élément existant<a class="headerlink" href="#modifier-un-element-existant" title="Permanent link">¶</a></h3>
+<p>On peut remplacer la valeur d'un élément en accédant à son index et en lui affectant une nouvelle valeur.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'fraise'</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'fraise', 'orange', 'mangue']</span>
+</code></pre></div>
+<h3 id="modifier-plusieurs-elements-avec-le-slicing">Modifier plusieurs éléments avec le slicing<a class="headerlink" href="#modifier-plusieurs-elements-avec-le-slicing" title="Permanent link">¶</a></h3>
+<p>Il est également possible de modifier plusieurs éléments d'un coup en combinant le slicing et l'affectation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'kiwi'</span><span class="p">,</span> <span class="s1">'citron'</span><span class="p">]</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'kiwi', 'citron', 'mangue']</span>
+</code></pre></div>
+<h2 id="5-ajouter-des-elements-a-une-liste">5. Ajouter des éléments à une liste<a class="headerlink" href="#5-ajouter-des-elements-a-une-liste" title="Permanent link">¶</a></h2>
+<h3 id="la-methode-append">La méthode append()<a class="headerlink" href="#la-methode-append" title="Permanent link">¶</a></h3>
+<p>La méthode <code>append()</code> ajoute un seul élément à la fin de la liste. C'est la façon la plus courante d'enrichir une liste au fil de l'exécution d'un programme.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'orange'</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'banane', 'orange']</span>
+</code></pre></div>
+<h3 id="la-methode-insert">La méthode insert()<a class="headerlink" href="#la-methode-insert" title="Permanent link">¶</a></h3>
+<p>La méthode <code>insert()</code> permet d'insérer un élément à une position précise. Elle prend deux arguments : l'index auquel insérer l'élément, et l'élément lui-même.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">fruits</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'kiwi'</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'kiwi', 'banane', 'orange']</span>
+</code></pre></div>
+<h3 id="la-methode-extend">La méthode extend()<a class="headerlink" href="#la-methode-extend" title="Permanent link">¶</a></h3>
+<p>La méthode <code>extend()</code> permet d'ajouter plusieurs éléments d'un coup en fusionnant une autre liste (ou tout autre itérable) avec la liste existante.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">nouveaux_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mangue'</span><span class="p">,</span> <span class="s1">'fraise'</span><span class="p">,</span> <span class="s1">'cerise'</span><span class="p">]</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nouveaux_fruits</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'banane', 'mangue', 'fraise', 'cerise']</span>
+</code></pre></div>
+<p>On peut également utiliser l'opérateur <code>+</code> pour concaténer deux listes et obtenir une nouvelle liste.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span> <span class="o">+</span> <span class="n">liste2</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">liste3</span><span class="p">)</span>  <span class="c1"># Affiche : [1, 2, 3, 4, 5, 6]</span>
+</code></pre></div>
+<h2 id="6-supprimer-des-elements-dune-liste">6. Supprimer des éléments d'une liste<a class="headerlink" href="#6-supprimer-des-elements-dune-liste" title="Permanent link">¶</a></h2>
+<h3 id="la-methode-remove">La méthode remove()<a class="headerlink" href="#la-methode-remove" title="Permanent link">¶</a></h3>
+<p>La méthode <code>remove()</code> supprime la première occurrence d'un élément dont on spécifie la valeur. Si l'élément n'existe pas, Python lève une erreur <code>ValueError</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">]</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'banane'</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'orange', 'banane']  (seule la première occurrence est supprimée)</span>
+</code></pre></div>
+<h3 id="la-methode-pop">La méthode pop()<a class="headerlink" href="#la-methode-pop" title="Permanent link">¶</a></h3>
+<p>La méthode <code>pop()</code> supprime et retourne l'élément situé à un index donné. Sans argument, elle supprime le dernier élément de la liste.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">element</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>  <span class="c1"># Affiche : mangue</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>   <span class="c1"># Affiche : ['pomme', 'banane', 'orange']</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">element</span> <span class="o">=</span> <span class="n">fruits</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>  <span class="c1"># Affiche : banane</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>   <span class="c1"># Affiche : ['pomme', 'orange']</span>
+</code></pre></div>
+<h3 id="linstruction-del">L'instruction del<a class="headerlink" href="#linstruction-del" title="Permanent link">¶</a></h3>
+<p>L'instruction <code>del</code> permet de supprimer un élément par son index, ou même de supprimer une portion de liste grâce au slicing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">,</span> <span class="s1">'kiwi'</span><span class="p">]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">del</span> <span class="n">fruits</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'banane', 'mangue', 'kiwi']</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="k">del</span> <span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['pomme', 'kiwi']</span>
+</code></pre></div>
+<h3 id="la-methode-clear">La méthode clear()<a class="headerlink" href="#la-methode-clear" title="Permanent link">¶</a></h3>
+<p>La méthode <code>clear()</code> vide entièrement une liste, sans la supprimer. La variable existe toujours mais ne contient plus aucun élément.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">fruits</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : []</span>
+</code></pre></div>
+<h2 id="7-parcourir-une-liste">7. Parcourir une liste<a class="headerlink" href="#7-parcourir-une-liste" title="Permanent link">¶</a></h2>
+<h3 id="avec-une-boucle-for">Avec une boucle for<a class="headerlink" href="#avec-une-boucle-for" title="Permanent link">¶</a></h3>
+<p>La façon la plus simple de parcourir tous les éléments d'une liste est d'utiliser une boucle <code>for</code>. À chaque itération, la variable de boucle prend la valeur de l'élément courant.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># Affiche :</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># pomme</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># banane</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1"># orange</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1"># mangue</span>
+</code></pre></div>
+<h3 id="avec-enumerate-pour-avoir-lindex">Avec enumerate() pour avoir l'index<a class="headerlink" href="#avec-enumerate-pour-avoir-lindex" title="Permanent link">¶</a></h3>
+<p>Lorsqu'on a besoin à la fois de l'index et de la valeur, la fonction <code>enumerate()</code> est très utile. Elle retourne des paires (index, valeur) à chaque itération.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fruits</span><span class="p">):</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">fruit</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># Affiche :</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># Index 0 : pomme</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Index 1 : banane</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1"># Index 2 : orange</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="c1"># Index 3 : mangue</span>
+</code></pre></div>
+<h3 id="avec-une-boucle-while">Avec une boucle while<a class="headerlink" href="#avec-une-boucle-while" title="Permanent link">¶</a></h3>
+<p>Il est également possible de parcourir une liste avec une boucle <code>while</code>, en utilisant un compteur d'index. Cette approche est moins courante mais peut s'avérer utile dans certains cas.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">):</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<h2 id="8-les-methodes-utiles-sur-les-listes">8. Les méthodes utiles sur les listes<a class="headerlink" href="#8-les-methodes-utiles-sur-les-listes" title="Permanent link">¶</a></h2>
+<p>Python fournit un ensemble de méthodes intégrées pour manipuler les listes de façon efficace.</p>
+<h3 id="connaitre-la-taille-dune-liste-len">Connaître la taille d'une liste : len()<a class="headerlink" href="#connaitre-la-taille-dune-liste-len" title="Permanent link">¶</a></h3>
+<p>La fonction <code>len()</code> retourne le nombre d'éléments dans une liste.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">))</span>  <span class="c1"># Affiche : 4</span>
+</code></pre></div>
+<h3 id="trier-une-liste-sort-et-sorted">Trier une liste : sort() et sorted()<a class="headerlink" href="#trier-une-liste-sort-et-sorted" title="Permanent link">¶</a></h3>
+<p>La méthode <code>sort()</code> trie la liste en place, c'est-à-dire qu'elle modifie directement la liste originale. La fonction <code>sorted()</code>, quant à elle, retourne une nouvelle liste triée sans modifier l'originale.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">nombres</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>  <span class="c1"># Affiche : [1, 2, 3, 5, 8, 9]</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1"># Tri en ordre décroissant</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">nombres</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>  <span class="c1"># Affiche : [9, 8, 5, 3, 2, 1]</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="c1"># sorted() ne modifie pas la liste originale</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="n">trie</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>  <span class="c1"># Affiche : [5, 2, 8, 1]  (inchangée)</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">trie</span><span class="p">)</span>      <span class="c1"># Affiche : [1, 2, 5, 8]</span>
+</code></pre></div>
+<h3 id="inverser-une-liste-reverse">Inverser une liste : reverse()<a class="headerlink" href="#inverser-une-liste-reverse" title="Permanent link">¶</a></h3>
+<p>La méthode <code>reverse()</code> inverse l'ordre des éléments de la liste en place.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">fruits</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Affiche : ['mangue', 'orange', 'banane', 'pomme']</span>
+</code></pre></div>
+<h3 id="compter-les-occurrences-count">Compter les occurrences : count()<a class="headerlink" href="#compter-les-occurrences-count" title="Permanent link">¶</a></h3>
+<p>La méthode <code>count()</code> retourne le nombre de fois qu'une valeur apparaît dans la liste.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>  <span class="c1"># Affiche : 3</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>  <span class="c1"># Affiche : 2</span>
+</code></pre></div>
+<h3 id="trouver-lindex-dun-element-index">Trouver l'index d'un élément : index()<a class="headerlink" href="#trouver-lindex-dun-element-index" title="Permanent link">¶</a></h3>
+<p>La méthode <code>index()</code> retourne l'index de la première occurrence d'une valeur donnée. Si la valeur n'est pas présente, une erreur <code>ValueError</code> est levée.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'orange'</span><span class="p">))</span>  <span class="c1"># Affiche : 2</span>
+</code></pre></div>
+<h3 id="verifier-la-presence-dun-element-in">Vérifier la présence d'un élément : in<a class="headerlink" href="#verifier-la-presence-dun-element-in" title="Permanent link">¶</a></h3>
+<p>L'opérateur <code>in</code> permet de vérifier si un élément est présent dans une liste. Il retourne <code>True</code> ou <code>False</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'banane'</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>   <span class="c1"># Affiche : True</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'cerise'</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>   <span class="c1"># Affiche : False</span>
+</code></pre></div>
+<h2 id="9-les-listes-imbriquees">9. Les listes imbriquées<a class="headerlink" href="#9-les-listes-imbriquees" title="Permanent link">¶</a></h2>
+<p>Une liste peut elle-même contenir d'autres listes. On parle alors de listes imbriquées ou de listes de listes. C'est une façon courante de représenter des tableaux ou des matrices en Python.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">matrice</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">]</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1"># Accéder à l'élément de la 2ème ligne, 3ème colonne</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">matrice</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche : 6</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="c1"># Parcourir une matrice</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">matrice</span><span class="p">:</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">ligne</span><span class="p">:</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    <span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="c1"># Affiche :</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="c1"># 1 2 3</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="c1"># 4 5 6</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="c1"># 7 8 9</span>
+</code></pre></div>
+<h2 id="10-la-comprehension-de-liste">10. La compréhension de liste<a class="headerlink" href="#10-la-comprehension-de-liste" title="Permanent link">¶</a></h2>
+<p>La compréhension de liste est une syntaxe concise et très pythonique pour créer une nouvelle liste à partir d'une liste existante (ou de tout itérable). Elle combine en une seule ligne ce qu'on ferait normalement avec une boucle <code>for</code> et éventuellement une condition <code>if</code>.</p>
+<p>La syntaxe générale est : <code>[expression for element in iterable if condition]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Créer une liste des carrés de 0 à 9</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">carres</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">carres</span><span class="p">)</span>  <span class="c1"># Affiche : [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1"># Filtrer les nombres pairs</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>  <span class="c1"># Affiche : [2, 4, 6, 8, 10]</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="c1"># Mettre en majuscule les fruits dont le nom contient la lettre 'a'</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pomme'</span><span class="p">,</span> <span class="s1">'banane'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'mangue'</span><span class="p">,</span> <span class="s1">'kiwi'</span><span class="p">]</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="n">resultat</span> <span class="o">=</span> <span class="p">[</span><span class="n">fruit</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span> <span class="k">if</span> <span class="s1">'a'</span> <span class="ow">in</span> <span class="n">fruit</span><span class="p">]</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>  <span class="c1"># Affiche : ['BANANE', 'ORANGE', 'MANGUE']</span>
+</code></pre></div>
+<p>La compréhension de liste est généralement plus rapide et plus lisible qu'une boucle <code>for</code> classique pour construire des listes, et elle est très appréciée dans la communauté Python.</p>
+<h2 id="resume">Résumé<a class="headerlink" href="#resume" title="Permanent link">¶</a></h2>
+<p>Les listes sont au cœur de la programmation Python. Voici les points essentiels à retenir :</p>
+<ul>
+<li>Une liste est une collection ordonnée et modifiable, définie avec des crochets <code>[]</code>.</li>
+<li>Les éléments sont accessibles par leur index (positif ou négatif).</li>
+<li>Le slicing permet d'extraire des sous-listes.</li>
+<li>Python propose de nombreuses méthodes pour ajouter (<code>append</code>, <code>insert</code>, <code>extend</code>), supprimer (<code>remove</code>, <code>pop</code>, <code>del</code>, <code>clear</code>) et manipuler (<code>sort</code>, <code>reverse</code>, <code>count</code>, <code>index</code>) les éléments.</li>
+<li>Les listes peuvent être imbriquées pour représenter des structures à plusieurs dimensions.</li>
+<li>La compréhension de liste offre une syntaxe élégante pour construire des listes à partir d'autres collections.</li>
+</ul>
+<p>Maîtriser les listes est indispensable pour écrire des programmes Python efficaces et lisibles.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "search.share", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

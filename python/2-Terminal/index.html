@@ -1,0 +1,3718 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Souleymane Diallo">
+      
+      
+        <link rel="canonical" href="https://souleymanediallo.github.io/python/2-Terminal/">
+      
+      
+        <link rel="prev" href="../1-Installation-Python/">
+      
+      
+        <link rel="next" href="../3-Variables/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Terminal - Développeur Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#decouvrir-le-terminal" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Développeur Python" class="md-header__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Développeur Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Terminal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0-Introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../accessibilite/1-introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Accessibilité
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Développeur Python" class="md-nav__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Développeur Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Installation-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-le-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi utiliser le terminal ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-acceder-au-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Accéder au Terminal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Accéder au Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-comprendre-linterface-du-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Comprendre l'Interface du Terminal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-commandes-de-base-pour-la-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Commandes de Base pour la Navigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Commandes de Base pour la Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pwd-print-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      pwd (Print Working Directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls (List)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-change-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd (Change Directory)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-manipulation-de-fichiers-et-dossiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Manipulation de Fichiers et Dossiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Manipulation de Fichiers et Dossiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-make-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir (Make Directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp (Copy)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv (Move)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm (Remove)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-visualiser-le-contenu-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Visualiser le Contenu des Fichiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Visualiser le Contenu des Fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-concatenate" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat (Concatenate)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      less / more
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      head / tail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-commandes-specifiques-a-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Commandes Spécifiques à Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Commandes Spécifiques à Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-python3" class="md-nav__link">
+    <span class="md-ellipsis">
+      python / python3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environnements-virtuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environnements Virtuels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recherche-et-filtrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recherche et Filtrage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Recherche et Filtrage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grep-global-regular-expression-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep (Global Regular Expression Print)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-redirection-et-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Redirection et Pipes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Redirection et Pipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirection-de-sortie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection de sortie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipes (|)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-raccourcis-clavier-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Raccourcis Clavier Utiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Raccourcis Clavier Utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contrôle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gestion-des-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Gestion des Processus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Gestion des Processus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps-process-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps (Process Status)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-htop" class="md-nav__link">
+    <span class="md-ellipsis">
+      top / htop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-permissions-linuxmac" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Permissions (Linux/Mac)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Permissions (Linux/Mac)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod-change-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod (Change Mode)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-change-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown (Change Owner)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-variables-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Variables d'Environnement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Variables d'Environnement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afficher-les-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afficher les variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-des-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir des variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-commandes-reseau-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Commandes Réseau Utiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Commandes Réseau Utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-archivage-et-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Archivage et Compression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Archivage et Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      zip / unzip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-astuces-pour-developpeurs-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Astuces pour Développeurs Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Astuces pour Développeurs Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creer-la-structure-dun-projet-rapidement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer la structure d'un projet rapidement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-dinitialisation-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script d'initialisation de projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias utiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-commandes-avancees" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Commandes Avancées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Commandes Avancées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      xargs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    <span class="md-ellipsis">
+      awk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      sed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-exercices-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Exercices Pratiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Exercices Pratiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 1 : Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-creation-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 2 : Création de projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-manipulation-de-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 3 : Manipulation de fichiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-python-et-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 4 : Python et pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-recherche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 5 : Recherche
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-ressources-supplementaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Ressources Supplémentaires
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Ressources Supplémentaires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sites-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sites Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandes-daide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commandes d'aide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cheat Sheets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-conseils-finaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Conseils Finaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Conseils Finaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bonnes-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonnes Pratiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pour Aller Plus Loin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#en-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      En résumé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Commentaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commentaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-Nombres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Affichage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Dictionnaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Tuples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tuples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Booleens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Booléens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-Operateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opérateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-Instructions-conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instructions conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-Boucles-for/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles for
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-Boucles-while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-Fonction-range/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonction range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-Fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-Comprehension-de-listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compréhension de listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Fichiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-Expressions-lambda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressions lambda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-Programmation-oriente-objet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-Modules-et-Packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules et packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-Erreurs-et-Expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erreurs et exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-Decorateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Décorateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-Iterateurs-et-generateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Itérateurs et générateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Expressions-regulieres-et-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regex et parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Objet-immuables-et-mutables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objets immuables et mutables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-Logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-PEP-8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEP 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-Fenetres-graphiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenêtres graphiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accessibilité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Accessibilité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/1-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/2-historique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/3-rgaa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGAA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/4-technologie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Téchnologie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/5-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/6-texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-le-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi utiliser le terminal ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-acceder-au-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Accéder au Terminal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Accéder au Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      macOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-comprendre-linterface-du-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Comprendre l'Interface du Terminal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-commandes-de-base-pour-la-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Commandes de Base pour la Navigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Commandes de Base pour la Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pwd-print-working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      pwd (Print Working Directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls (List)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-change-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd (Change Directory)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-manipulation-de-fichiers-et-dossiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Manipulation de Fichiers et Dossiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Manipulation de Fichiers et Dossiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-make-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir (Make Directory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp (Copy)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv (Move)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm (Remove)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-visualiser-le-contenu-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Visualiser le Contenu des Fichiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Visualiser le Contenu des Fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-concatenate" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat (Concatenate)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      less / more
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      head / tail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-commandes-specifiques-a-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Commandes Spécifiques à Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Commandes Spécifiques à Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-python3" class="md-nav__link">
+    <span class="md-ellipsis">
+      python / python3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environnements-virtuels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environnements Virtuels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recherche-et-filtrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recherche et Filtrage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Recherche et Filtrage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grep-global-regular-expression-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep (Global Regular Expression Print)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-redirection-et-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Redirection et Pipes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Redirection et Pipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirection-de-sortie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection de sortie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipes (|)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-raccourcis-clavier-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Raccourcis Clavier Utiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Raccourcis Clavier Utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contrôle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gestion-des-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Gestion des Processus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Gestion des Processus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps-process-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps (Process Status)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-htop" class="md-nav__link">
+    <span class="md-ellipsis">
+      top / htop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-permissions-linuxmac" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Permissions (Linux/Mac)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Permissions (Linux/Mac)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod-change-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod (Change Mode)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-change-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown (Change Owner)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-variables-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Variables d'Environnement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Variables d'Environnement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afficher-les-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afficher les variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-des-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir des variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-commandes-reseau-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Commandes Réseau Utiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Commandes Réseau Utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-archivage-et-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Archivage et Compression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Archivage et Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      zip / unzip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-astuces-pour-developpeurs-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Astuces pour Développeurs Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Astuces pour Développeurs Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creer-la-structure-dun-projet-rapidement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer la structure d'un projet rapidement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-dinitialisation-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script d'initialisation de projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias utiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-commandes-avancees" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Commandes Avancées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Commandes Avancées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      xargs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    <span class="md-ellipsis">
+      awk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      sed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-exercices-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Exercices Pratiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Exercices Pratiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 1 : Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-creation-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 2 : Création de projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-manipulation-de-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 3 : Manipulation de fichiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-python-et-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 4 : Python et pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-recherche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 5 : Recherche
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-ressources-supplementaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Ressources Supplémentaires
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Ressources Supplémentaires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sites-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sites Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandes-daide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commandes d'aide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cheat Sheets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-conseils-finaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Conseils Finaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Conseils Finaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bonnes-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonnes Pratiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pour Aller Plus Loin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#en-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      En résumé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="decouvrir-le-terminal">Découvrir le terminal<a class="headerlink" href="#decouvrir-le-terminal" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Le terminal (aussi appelé console, ligne de commande, ou shell) est une interface textuelle qui permet d'interagir 
+avec votre ordinateur en tapant des commandes. Pour un développeur Python, maîtriser le terminal est essentiel.</p>
+<h3 id="pourquoi-utiliser-le-terminal">Pourquoi utiliser le terminal ?<a class="headerlink" href="#pourquoi-utiliser-le-terminal" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Efficacité</strong> : Certaines tâches sont plus rapides en ligne de commande</li>
+<li><strong>Automatisation</strong> : Possibilité de créer des scripts pour automatiser des tâches</li>
+<li><strong>Développement</strong> : Gérer des projets, installer des packages, exécuter des programmes</li>
+<li><strong>Serveurs</strong> : Les serveurs n'ont souvent pas d'interface graphique</li>
+</ul>
+<h2 id="1-acceder-au-terminal">1. Accéder au Terminal<a class="headerlink" href="#1-acceder-au-terminal" title="Permanent link">¶</a></h2>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>PowerShell</strong> : Rechercher "PowerShell" dans le menu Démarrer</li>
+<li><strong>Invite de commandes</strong> : Rechercher "cmd" </li>
+<li><strong>Git Bash</strong> : Si Git est installé (recommandé pour une expérience Unix-like)</li>
+<li><strong>Windows Terminal</strong> : Application moderne qui combine plusieurs shells</li>
+</ul>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Terminal</strong> : Applications → Utilitaires → Terminal</li>
+<li>Ou : <code>Cmd + Espace</code> puis taper "Terminal"</li>
+</ul>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Raccourci clavier</strong> : Généralement <code>Ctrl + Alt + T</code></li>
+<li>Ou : Chercher "Terminal" dans les applications</li>
+</ul>
+<h2 id="2-comprendre-linterface-du-terminal">2. Comprendre l'Interface du Terminal<a class="headerlink" href="#2-comprendre-linterface-du-terminal" title="Permanent link">¶</a></h2>
+<p>Quand vous ouvrez le terminal, vous voyez quelque chose comme :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>utilisateur@ordinateur:~$
+</code></pre></div>
+<p>Cette ligne s'appelle le <strong>prompt</strong> et contient :</p>
+<ul>
+<li><strong>utilisateur</strong> : votre nom d'utilisateur</li>
+<li><strong>ordinateur</strong> : le nom de votre machine</li>
+<li><strong>~</strong> : le répertoire actuel (~ signifie le répertoire personnel)</li>
+<li><strong>$</strong> : indique que vous êtes un utilisateur normal (# pour root/admin)</li>
+</ul>
+<h2 id="3-commandes-de-base-pour-la-navigation">3. Commandes de Base pour la Navigation<a class="headerlink" href="#3-commandes-de-base-pour-la-navigation" title="Permanent link">¶</a></h2>
+<h3 id="pwd-print-working-directory">pwd (Print Working Directory)<a class="headerlink" href="#pwd-print-working-directory" title="Permanent link">¶</a></h3>
+<p>Affiche le chemin du répertoire actuel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">pwd</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Résultat : /home/utilisateur</span>
+</code></pre></div>
+<h3 id="ls-list">ls (List)<a class="headerlink" href="#ls-list" title="Permanent link">¶</a></h3>
+<p>Liste les fichiers et dossiers du répertoire actuel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Liste simple</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ls
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Liste détaillée avec permissions, taille, date</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ls<span class="w"> </span>-l
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Afficher les fichiers cachés</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>ls<span class="w"> </span>-a
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Combinaison (détaillé + cachés)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>ls<span class="w"> </span>-la
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># Trier par date de modification</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>ls<span class="w"> </span>-lt
+</code></pre></div>
+<p><strong>Windows (cmd/PowerShell)</strong> : utiliser <code>dir</code> au lieu de <code>ls</code></p>
+<h3 id="cd-change-directory">cd (Change Directory)<a class="headerlink" href="#cd-change-directory" title="Permanent link">¶</a></h3>
+<p>Change de répertoire</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Aller dans un dossier</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>Documents
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Remonter d'un niveau</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Aller au répertoire personnel</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">cd</span><span class="w"> </span>~
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># ou simplement</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">cd</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Aller à la racine du système</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nb">cd</span><span class="w"> </span>/
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Revenir au répertoire précédent</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nb">cd</span><span class="w"> </span>-
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># Chemin absolu (depuis la racine)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nb">cd</span><span class="w"> </span>/home/utilisateur/Documents
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1"># Chemin relatif (depuis la position actuelle)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nb">cd</span><span class="w"> </span>../Images
+</code></pre></div>
+<h2 id="4-manipulation-de-fichiers-et-dossiers">4. Manipulation de Fichiers et Dossiers<a class="headerlink" href="#4-manipulation-de-fichiers-et-dossiers" title="Permanent link">¶</a></h2>
+<h3 id="mkdir-make-directory">mkdir (Make Directory)<a class="headerlink" href="#mkdir-make-directory" title="Permanent link">¶</a></h3>
+<p>Créer un nouveau dossier</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Créer un dossier</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>mkdir<span class="w"> </span>mon_projet
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Créer plusieurs dossiers</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>mkdir<span class="w"> </span>dossier1<span class="w"> </span>dossier2<span class="w"> </span>dossier3
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Créer une arborescence de dossiers</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>projets/python/mon_app
+</code></pre></div>
+<h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">¶</a></h3>
+<p>Créer un fichier vide (Unix/Mac/Git Bash)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>touch<span class="w"> </span>fichier.txt
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>touch<span class="w"> </span>script.py
+</code></pre></div>
+<p><strong>Windows (PowerShell)</strong> :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">New-Item</span> <span class="n">fichier</span><span class="p">.</span><span class="n">txt</span> <span class="n">-ItemType</span> <span class="n">File</span>
+</code></pre></div>
+<h3 id="cp-copy">cp (Copy)<a class="headerlink" href="#cp-copy" title="Permanent link">¶</a></h3>
+<p>Copier des fichiers ou dossiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Copier un fichier</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp<span class="w"> </span>source.txt<span class="w"> </span>destination.txt
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Copier dans un autre dossier</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>cp<span class="w"> </span>fichier.txt<span class="w"> </span>/chemin/vers/dossier/
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Copier un dossier entier (récursif)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>cp<span class="w"> </span>-r<span class="w"> </span>dossier_source/<span class="w"> </span>dossier_destination/
+</code></pre></div>
+<p><strong>Windows (cmd)</strong> : utiliser <code>copy</code> pour les fichiers, <code>xcopy</code> pour les dossiers</p>
+<h3 id="mv-move">mv (Move)<a class="headerlink" href="#mv-move" title="Permanent link">¶</a></h3>
+<p>Déplacer ou renommer des fichiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Renommer un fichier</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>mv<span class="w"> </span>ancien_nom.txt<span class="w"> </span>nouveau_nom.txt
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Déplacer un fichier</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>mv<span class="w"> </span>fichier.txt<span class="w"> </span>/chemin/vers/destination/
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Déplacer et renommer</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>mv<span class="w"> </span>fichier.txt<span class="w"> </span>/autre/dossier/nouveau_nom.txt
+</code></pre></div>
+<p><strong>Windows (cmd)</strong> : utiliser <code>move</code> ou <code>ren</code> pour renommer</p>
+<h3 id="rm-remove">rm (Remove)<a class="headerlink" href="#rm-remove" title="Permanent link">¶</a></h3>
+<p>Supprimer des fichiers ou dossiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Supprimer un fichier</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>rm<span class="w"> </span>fichier.txt
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Supprimer plusieurs fichiers</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>rm<span class="w"> </span>fichier1.txt<span class="w"> </span>fichier2.txt
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Supprimer un dossier vide</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>rmdir<span class="w"> </span>dossier_vide
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># Supprimer un dossier et son contenu (ATTENTION !)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>rm<span class="w"> </span>-r<span class="w"> </span>dossier/
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># Forcer la suppression sans confirmation</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>rm<span class="w"> </span>-rf<span class="w"> </span>dossier/
+</code></pre></div>
+<p><strong>ATTENTION</strong> : <code>rm -rf</code> est dangereux ! Il supprime sans confirmation et sans possibilité de récupération.</p>
+<p><strong>Windows (cmd)</strong> : utiliser <code>del</code> pour les fichiers, <code>rmdir</code> ou <code>rd /s</code> pour les dossiers</p>
+<h2 id="5-visualiser-le-contenu-des-fichiers">5. Visualiser le Contenu des Fichiers<a class="headerlink" href="#5-visualiser-le-contenu-des-fichiers" title="Permanent link">¶</a></h2>
+<h3 id="cat-concatenate">cat (Concatenate)<a class="headerlink" href="#cat-concatenate" title="Permanent link">¶</a></h3>
+<p>Afficher le contenu d'un fichier</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat<span class="w"> </span>fichier.txt
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Afficher plusieurs fichiers</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>cat<span class="w"> </span>fichier1.txt<span class="w"> </span>fichier2.txt
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Afficher avec numéros de ligne</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>cat<span class="w"> </span>-n<span class="w"> </span>fichier.txt
+</code></pre></div>
+<p><strong>Windows (cmd)</strong> : utiliser <code>type</code></p>
+<h3 id="less-more">less / more<a class="headerlink" href="#less-more" title="Permanent link">¶</a></h3>
+<p>Visualiser un fichier page par page</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>less<span class="w"> </span>fichier.txt
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># Navigation : espace (page suivante), b (page précédente), q (quitter)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>more<span class="w"> </span>fichier.txt
+</code></pre></div>
+<p><strong>Windows (PowerShell)</strong> : utiliser <code>more</code></p>
+<h3 id="head-tail">head / tail<a class="headerlink" href="#head-tail" title="Permanent link">¶</a></h3>
+<p>Afficher le début ou la fin d'un fichier</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># 10 premières lignes</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>head<span class="w"> </span>fichier.txt
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># 5 premières lignes</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>fichier.txt
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># 10 dernières lignes</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>tail<span class="w"> </span>fichier.txt
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1"># Suivre un fichier en temps réel (utile pour les logs)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>tail<span class="w"> </span>-f<span class="w"> </span>application.log
+</code></pre></div>
+<h2 id="6-commandes-specifiques-a-python">6. Commandes Spécifiques à Python<a class="headerlink" href="#6-commandes-specifiques-a-python" title="Permanent link">¶</a></h2>
+<h3 id="python-python3">python / python3<a class="headerlink" href="#python-python3" title="Permanent link">¶</a></h3>
+<p>Exécuter l'interpréteur Python</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Lancer Python interactif</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>python
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>python3
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># Exécuter un script</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>python<span class="w"> </span>script.py
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>python3<span class="w"> </span>mon_programme.py
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1"># Exécuter du code directement</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"print('Hello World')"</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># Afficher la version de Python</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>python<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">¶</a></h3>
+<p>Gestionnaire de packages Python</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Installer un package</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>pip<span class="w"> </span>install<span class="w"> </span>numpy
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>pip<span class="w"> </span>install<span class="w"> </span>requests<span class="w"> </span>pandas<span class="w"> </span>matplotlib
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Installer une version spécifique</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">django</span><span class="o">==</span><span class="m">6</span>.0.0
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Installer depuis requirements.txt</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="c1"># Lister les packages installés</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>pip<span class="w"> </span>list
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="c1"># Afficher les infos d'un package</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>pip<span class="w"> </span>show<span class="w"> </span>numpy
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="c1"># Mettre à jour un package</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>numpy
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="c1"># Désinstaller un package</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>numpy
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="c1"># Créer un fichier requirements.txt</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</code></pre></div>
+<h3 id="environnements-virtuels">Environnements Virtuels<a class="headerlink" href="#environnements-virtuels" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Créer un environnement virtuel</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>mon_env
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Activer l'environnement (Linux/Mac)</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nb">source</span><span class="w"> </span>mon_env/bin/activate
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Activer l'environnement (Windows)</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>mon_env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1"># Désactiver l'environnement</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>deactivate
+</code></pre></div>
+<h2 id="7-recherche-et-filtrage">7. Recherche et Filtrage<a class="headerlink" href="#7-recherche-et-filtrage" title="Permanent link">¶</a></h2>
+<h3 id="grep-global-regular-expression-print">grep (Global Regular Expression Print)<a class="headerlink" href="#grep-global-regular-expression-print" title="Permanent link">¶</a></h3>
+<p>Rechercher du texte dans des fichiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Rechercher "erreur" dans un fichier</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>grep<span class="w"> </span><span class="s2">"erreur"</span><span class="w"> </span>log.txt
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Recherche insensible à la casse</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"erreur"</span><span class="w"> </span>log.txt
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Rechercher dans tous les fichiers .py</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>grep<span class="w"> </span><span class="s2">"def "</span><span class="w"> </span>*.py
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1"># Rechercher récursivement dans tous les sous-dossiers</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">"TODO"</span><span class="w"> </span>.
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># Afficher le numéro de ligne</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"import"</span><span class="w"> </span>script.py
+</code></pre></div>
+<p><strong>Windows (PowerShell)</strong> : utiliser <code>Select-String</code></p>
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">¶</a></h3>
+<p>Rechercher des fichiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Trouver tous les fichiers .py</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.py"</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Trouver tous les fichiers modifiés dans les 7 derniers jours</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-7
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Trouver les fichiers de plus de 100MB</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+100M
+</code></pre></div>
+<p><strong>Windows</strong> : utiliser <code>dir /s</code> ou PowerShell <code>Get-ChildItem -Recurse</code></p>
+<h2 id="8-redirection-et-pipes">8. Redirection et Pipes<a class="headerlink" href="#8-redirection-et-pipes" title="Permanent link">¶</a></h2>
+<h3 id="redirection-de-sortie">Redirection de sortie<a class="headerlink" href="#redirection-de-sortie" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Écrire la sortie dans un fichier (écrase le contenu)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>ls<span class="w"> </span>&gt;<span class="w"> </span>liste_fichiers.txt
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>python<span class="w"> </span>script.py<span class="w"> </span>&gt;<span class="w"> </span>resultat.txt
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Ajouter à la fin d'un fichier (sans écraser)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Nouvelle ligne"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>fichier.txt
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>python<span class="w"> </span>script.py<span class="w"> </span>&gt;&gt;<span class="w"> </span>log.txt
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1"># Rediriger les erreurs</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>python<span class="w"> </span>script.py<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>erreurs.txt
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1"># Rediriger sortie standard ET erreurs</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>python<span class="w"> </span>script.py<span class="w"> </span>&gt;<span class="w"> </span>output.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+<h3 id="pipes">Pipes (|)<a class="headerlink" href="#pipes" title="Permanent link">¶</a></h3>
+<p>Enchaîner des commandes</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Compter le nombre de fichiers .py</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>ls<span class="w"> </span>*.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Afficher les lignes contenant "def" dans tous les .py</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>cat<span class="w"> </span>*.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"def"</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># Trier et afficher les 10 premiers</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+<h2 id="9-raccourcis-clavier-utiles">9. Raccourcis Clavier Utiles<a class="headerlink" href="#9-raccourcis-clavier-utiles" title="Permanent link">¶</a></h2>
+<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>Ctrl + A</code> : Aller au début de la ligne</li>
+<li><code>Ctrl + E</code> : Aller à la fin de la ligne</li>
+<li><code>Ctrl + U</code> : Effacer du curseur au début de la ligne</li>
+<li><code>Ctrl + K</code> : Effacer du curseur à la fin de la ligne</li>
+<li><code>Ctrl + W</code> : Effacer le mot précédent</li>
+<li><code>Alt + B</code> : Reculer d'un mot</li>
+<li><code>Alt + F</code> : Avancer d'un mot</li>
+</ul>
+<h3 id="historique">Historique<a class="headerlink" href="#historique" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>↑</code> / <code>↓</code> : Naviguer dans l'historique des commandes</li>
+<li><code>Ctrl + R</code> : Rechercher dans l'historique (très utile !)</li>
+<li><code>history</code> : Afficher l'historique des commandes</li>
+<li><code>!!</code> : Répéter la dernière commande</li>
+<li><code>!n</code> : Exécuter la commande numéro n de l'historique</li>
+</ul>
+<h3 id="controle">Contrôle<a class="headerlink" href="#controle" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>Ctrl + C</code> : Arrêter/Interrompre le processus en cours</li>
+<li><code>Ctrl + D</code> : Fermer le terminal (EOF)</li>
+<li><code>Ctrl + Z</code> : Mettre en pause le processus</li>
+<li><code>Ctrl + L</code> : Effacer l'écran (équivalent de <code>clear</code>)</li>
+<li><code>Tab</code> : Auto-complétion (TRÈS UTILE !)</li>
+</ul>
+<h2 id="10-gestion-des-processus">10. Gestion des Processus<a class="headerlink" href="#10-gestion-des-processus" title="Permanent link">¶</a></h2>
+<h3 id="ps-process-status">ps (Process Status)<a class="headerlink" href="#ps-process-status" title="Permanent link">¶</a></h3>
+<p>Afficher les processus en cours</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Processus de l'utilisateur actuel</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>ps
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Tous les processus</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>ps<span class="w"> </span>aux
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># Filtrer les processus Python</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>python
+</code></pre></div>
+<p><strong>Windows</strong> : utiliser le Gestionnaire des tâches ou <code>tasklist</code> en cmd</p>
+<h3 id="kill">kill<a class="headerlink" href="#kill" title="Permanent link">¶</a></h3>
+<p>Arrêter un processus</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Arrêter proprement un processus</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">kill</span><span class="w"> </span>PID
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Forcer l'arrêt</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>PID
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Arrêter tous les processus Python</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>pkill<span class="w"> </span>python
+</code></pre></div>
+<p><strong>Windows (cmd)</strong> : utiliser <code>taskkill /PID numero</code> ou <code>taskkill /IM nom_processus.exe</code></p>
+<h3 id="top-htop">top / htop<a class="headerlink" href="#top-htop" title="Permanent link">¶</a></h3>
+<p>Moniteur de processus en temps réel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>top
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1"># ou (plus convivial si installé)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>htop
+</code></pre></div>
+<p><strong>Windows</strong> : Gestionnaire des tâches ou <code>Get-Process</code> en PowerShell</p>
+<h2 id="11-permissions-linuxmac">11. Permissions (Linux/Mac)<a class="headerlink" href="#11-permissions-linuxmac" title="Permanent link">¶</a></h2>
+<h3 id="chmod-change-mode">chmod (Change Mode)<a class="headerlink" href="#chmod-change-mode" title="Permanent link">¶</a></h3>
+<p>Modifier les permissions d'un fichier</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Rendre un script exécutable</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>script.py
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># Permissions complètes pour le propriétaire</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>fichier.txt
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1"># Lecture seule pour tous</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>chmod<span class="w"> </span><span class="m">444</span><span class="w"> </span>fichier.txt
+</code></pre></div>
+<p>Les chiffres représentent :</p>
+<ul>
+<li><strong>7</strong> = lecture + écriture + exécution (rwx)</li>
+<li><strong>6</strong> = lecture + écriture (rw-)</li>
+<li><strong>5</strong> = lecture + exécution (r-x)</li>
+<li><strong>4</strong> = lecture seule (r--)</li>
+</ul>
+<h3 id="chown-change-owner">chown (Change Owner)<a class="headerlink" href="#chown-change-owner" title="Permanent link">¶</a></h3>
+<p>Changer le propriétaire d'un fichier</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Changer le propriétaire</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>utilisateur<span class="w"> </span>fichier.txt
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Changer le propriétaire et le groupe</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>sudo<span class="w"> </span>chown<span class="w"> </span>utilisateur:groupe<span class="w"> </span>fichier.txt
+</code></pre></div>
+<h2 id="12-variables-denvironnement">12. Variables d'Environnement<a class="headerlink" href="#12-variables-denvironnement" title="Permanent link">¶</a></h2>
+<h3 id="afficher-les-variables">Afficher les variables<a class="headerlink" href="#afficher-les-variables" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Afficher toutes les variables d'environnement</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>env
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>printenv
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1"># Afficher une variable spécifique</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div>
+<p><strong>Windows (cmd)</strong> : utiliser <code>set</code> ou <code>echo %PATH%</code></p>
+<h3 id="definir-des-variables">Définir des variables<a class="headerlink" href="#definir-des-variables" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Temporaire (session actuelle uniquement)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MA_VARIABLE</span><span class="o">=</span><span class="s2">"valeur"</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Vérifier</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$MA_VARIABLE</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="c1"># Ajouter au PATH</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/nouveau/chemin
+</code></pre></div>
+<p>Pour rendre permanentes les modifications, ajouter ces lignes à :
+- Linux/Mac : <code>~/.bashrc</code> ou <code>~/.zshrc</code>
+- Windows : Variables d'environnement système</p>
+<h2 id="13-commandes-reseau-utiles">13. Commandes Réseau Utiles<a class="headerlink" href="#13-commandes-reseau-utiles" title="Permanent link">¶</a></h2>
+<h3 id="ping">ping<a class="headerlink" href="#ping" title="Permanent link">¶</a></h3>
+<p>Tester la connectivité réseau</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ping<span class="w"> </span>google.com
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>ping<span class="w"> </span><span class="m">8</span>.8.8.8
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Limiter à 4 paquets</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>google.com
+</code></pre></div>
+<h3 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">¶</a></h3>
+<p>Télécharger ou interroger des URLs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Télécharger un fichier</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://example.com/fichier.zip
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1"># Afficher le contenu d'une page</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>curl<span class="w"> </span>https://api.github.com/users/python
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># Envoyer une requête POST</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s2">"param=value"</span><span class="w"> </span>https://example.com/api
+</code></pre></div>
+<h3 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">¶</a></h3>
+<p>Télécharger des fichiers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>wget<span class="w"> </span>https://example.com/fichier.zip
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1"># Télécharger en arrière-plan</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>wget<span class="w"> </span>-b<span class="w"> </span>https://example.com/gros_fichier.zip
+</code></pre></div>
+<h2 id="14-archivage-et-compression">14. Archivage et Compression<a class="headerlink" href="#14-archivage-et-compression" title="Permanent link">¶</a></h2>
+<h3 id="tar">tar<a class="headerlink" href="#tar" title="Permanent link">¶</a></h3>
+<p>Créer et extraire des archives</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Créer une archive</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>tar<span class="w"> </span>-cvf<span class="w"> </span>archive.tar<span class="w"> </span>dossier/
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># Créer une archive compressée (gzip)</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>tar<span class="w"> </span>-czvf<span class="w"> </span>archive.tar.gz<span class="w"> </span>dossier/
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="c1"># Extraire une archive</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>tar<span class="w"> </span>-xvf<span class="w"> </span>archive.tar
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="c1"># Extraire une archive gzip</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>tar<span class="w"> </span>-xzvf<span class="w"> </span>archive.tar.gz
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="c1"># Lister le contenu sans extraire</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>tar<span class="w"> </span>-tvf<span class="w"> </span>archive.tar.gz
+</code></pre></div>
+<p>Options :
+- <strong>c</strong> : create (créer)
+- <strong>x</strong> : extract (extraire)
+- <strong>v</strong> : verbose (détaillé)
+- <strong>f</strong> : file (fichier)
+- <strong>z</strong> : gzip compression</p>
+<h3 id="zip-unzip">zip / unzip<a class="headerlink" href="#zip-unzip" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Créer un zip</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>zip<span class="w"> </span>-r<span class="w"> </span>archive.zip<span class="w"> </span>dossier/
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># Extraire un zip</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>unzip<span class="w"> </span>archive.zip
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="c1"># Lister le contenu</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>unzip<span class="w"> </span>-l<span class="w"> </span>archive.zip
+</code></pre></div>
+<h2 id="15-astuces-pour-developpeurs-python">15. Astuces pour Développeurs Python<a class="headerlink" href="#15-astuces-pour-developpeurs-python" title="Permanent link">¶</a></h2>
+<h3 id="creer-la-structure-dun-projet-rapidement">Créer la structure d'un projet rapidement<a class="headerlink" href="#creer-la-structure-dun-projet-rapidement" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>mkdir<span class="w"> </span>mon_projet
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nb">cd</span><span class="w"> </span>mon_projet
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>mkdir<span class="w"> </span>src<span class="w"> </span>tests<span class="w"> </span>docs
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>touch<span class="w"> </span>README.md<span class="w"> </span>requirements.txt<span class="w"> </span>.gitignore
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>touch<span class="w"> </span>src/__init__.py<span class="w"> </span>src/main.py
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>touch<span class="w"> </span>tests/__init__.py<span class="w"> </span>tests/test_main.py
+</code></pre></div>
+<h3 id="script-dinitialisation-de-projet">Script d'initialisation de projet<a class="headerlink" href="#script-dinitialisation-de-projet" title="Permanent link">¶</a></h3>
+<p>Créer un fichier <code>init_projet.sh</code> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="c1"># Script d'initialisation de projet Python</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nv">PROJECT_NAME</span><span class="o">=</span><span class="nv">$1</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$PROJECT_NAME</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: ./init_projet.sh nom_du_projet"</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="k">fi</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>mkdir<span class="w"> </span><span class="nv">$PROJECT_NAME</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$PROJECT_NAME</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="c1"># Structure de dossiers</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>mkdir<span class="w"> </span>src<span class="w"> </span>tests<span class="w"> </span>docs
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="c1"># Fichiers de base</span>
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>touch<span class="w"> </span>README.md
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>touch<span class="w"> </span>requirements.txt
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>touch<span class="w"> </span>.gitignore
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>touch<span class="w"> </span>src/__init__.py
+<a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>touch<span class="w"> </span>src/main.py
+<a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>touch<span class="w"> </span>tests/__init__.py
+<a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>
+<a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a><span class="c1"># Environnement virtuel</span>
+<a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a>
+<a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Projet </span><span class="nv">$PROJECT_NAME</span><span class="s2"> initialisé avec succès !"</span>
+<a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"Pour activer l'environnement : source venv/bin/activate"</span>
+</code></pre></div>
+<p>Rendre le script exécutable : <code>chmod +x init_projet.sh</code></p>
+<p>Utiliser : <code>./init_projet.sh mon_super_projet</code></p>
+<h3 id="alias-utiles">Alias utiles<a class="headerlink" href="#alias-utiles" title="Permanent link">¶</a></h3>
+<p>Ajouter dans <code>~/.bashrc</code> ou <code>~/.zshrc</code> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Raccourcis Python</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">py</span><span class="o">=</span><span class="s1">'python3'</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">pip</span><span class="o">=</span><span class="s1">'pip3'</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">venv</span><span class="o">=</span><span class="s1">'python3 -m venv'</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">activate</span><span class="o">=</span><span class="s1">'source venv/bin/activate'</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="c1"># Raccourcis généraux</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">'ls -lah'</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="nb">alias</span><span class="w"> </span>..<span class="o">=</span><span class="s1">'cd ..'</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="nb">alias</span><span class="w"> </span>...<span class="o">=</span><span class="s1">'cd ../..'</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">cls</span><span class="o">=</span><span class="s1">'clear'</span>
+</code></pre></div>
+<p>Puis recharger : <code>source ~/.bashrc</code></p>
+<h2 id="16-commandes-avancees">16. Commandes Avancées<a class="headerlink" href="#16-commandes-avancees" title="Permanent link">¶</a></h2>
+<h3 id="xargs">xargs<a class="headerlink" href="#xargs" title="Permanent link">¶</a></h3>
+<p>Construire et exécuter des commandes depuis l'entrée standard</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Supprimer tous les fichiers .pyc</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>rm
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Compter les lignes de tous les fichiers .py</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.py"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div>
+<h3 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">¶</a></h3>
+<p>Traitement de texte et extraction de colonnes</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Extraire la 2ème colonne</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $2}'</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c1"># Calculer l'espace disque total utilisé</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>ls<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{sum += $5} END {print sum}'</span>
+</code></pre></div>
+<h3 id="sed">sed<a class="headerlink" href="#sed" title="Permanent link">¶</a></h3>
+<p>Édition de flux (stream editor)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># Remplacer du texte</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>sed<span class="w"> </span><span class="s1">'s/ancien/nouveau/g'</span><span class="w"> </span>fichier.txt
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1"># Supprimer les lignes vides</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>sed<span class="w"> </span><span class="s1">'/^$/d'</span><span class="w"> </span>fichier.txt
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="c1"># Modifier en place</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/ancien/nouveau/g'</span><span class="w"> </span>fichier.txt
+</code></pre></div>
+<h2 id="17-exercices-pratiques">17. Exercices Pratiques<a class="headerlink" href="#17-exercices-pratiques" title="Permanent link">¶</a></h2>
+<h3 id="exercice-1-navigation">Exercice 1 : Navigation<a class="headerlink" href="#exercice-1-navigation" title="Permanent link">¶</a></h3>
+<ol>
+<li>Affichez votre répertoire actuel</li>
+<li>Listez tous les fichiers (y compris cachés)</li>
+<li>Créez un dossier <code>exercices_python</code></li>
+<li>Allez dans ce dossier</li>
+<li>Revenez au répertoire parent</li>
+</ol>
+<h3 id="exercice-2-creation-de-projet">Exercice 2 : Création de projet<a class="headerlink" href="#exercice-2-creation-de-projet" title="Permanent link">¶</a></h3>
+<ol>
+<li>Créez un projet avec la structure suivante :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>mon_app/
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>├── src/
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>│   ├── __init__.py
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>│   └── app.py
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>├── tests/
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>│   └── test_app.py
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>├── README.md
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>└── requirements.txt
+</code></pre></div></li>
+</ol>
+<h3 id="exercice-3-manipulation-de-fichiers">Exercice 3 : Manipulation de fichiers<a class="headerlink" href="#exercice-3-manipulation-de-fichiers" title="Permanent link">¶</a></h3>
+<ol>
+<li>Créez un fichier <code>notes.txt</code></li>
+<li>Ajoutez-y du texte avec <code>echo "Ma première note" &gt; notes.txt</code></li>
+<li>Ajoutez une autre ligne avec <code>echo "Ma deuxième note" &gt;&gt; notes.txt</code></li>
+<li>Affichez le contenu</li>
+<li>Copiez le fichier en <code>notes_backup.txt</code></li>
+</ol>
+<h3 id="exercice-4-python-et-pip">Exercice 4 : Python et pip<a class="headerlink" href="#exercice-4-python-et-pip" title="Permanent link">¶</a></h3>
+<ol>
+<li>Vérifiez votre version de Python</li>
+<li>Créez un environnement virtuel</li>
+<li>Activez-le</li>
+<li>Installez <code>requests</code> et <code>beautifulsoup4</code></li>
+<li>Créez un fichier <code>requirements.txt</code></li>
+<li>Désactivez l'environnement</li>
+</ol>
+<h3 id="exercice-5-recherche">Exercice 5 : Recherche<a class="headerlink" href="#exercice-5-recherche" title="Permanent link">¶</a></h3>
+<ol>
+<li>Créez plusieurs fichiers <code>.py</code> avec différents contenus</li>
+<li>Utilisez <code>grep</code> pour trouver tous les fichiers contenant <code>import</code></li>
+<li>Utilisez <code>find</code> pour lister tous les fichiers <code>.py</code></li>
+</ol>
+<h2 id="18-ressources-supplementaires">18. Ressources Supplémentaires<a class="headerlink" href="#18-ressources-supplementaires" title="Permanent link">¶</a></h2>
+<h3 id="sites-web">Sites Web<a class="headerlink" href="#sites-web" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>SS64.com</strong> : Référence complète des commandes (Windows, Linux, Mac)</li>
+<li><strong>ExplainShell.com</strong> : Explique les commandes complexes</li>
+<li><strong>TLDR Pages</strong> : Exemples simplifiés de commandes</li>
+</ul>
+<h3 id="commandes-daide">Commandes d'aide<a class="headerlink" href="#commandes-daide" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Manuel d'une commande (Linux/Mac)</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>man<span class="w"> </span>ls
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>man<span class="w"> </span>grep
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="c1"># Aide intégrée</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>ls<span class="w"> </span>--help
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>python<span class="w"> </span>--help
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="c1"># Commande "which" pour trouver l'emplacement</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>which<span class="w"> </span>python
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>which<span class="w"> </span>pip
+</code></pre></div>
+<h3 id="cheat-sheets">Cheat Sheets<a class="headerlink" href="#cheat-sheets" title="Permanent link">¶</a></h3>
+<ul>
+<li>Imprimez et gardez à portée de main un cheat sheet des commandes</li>
+<li>Créez vos propres notes avec vos commandes fréquentes</li>
+</ul>
+<h2 id="19-conseils-finaux">19. Conseils Finaux<a class="headerlink" href="#19-conseils-finaux" title="Permanent link">¶</a></h2>
+<h3 id="bonnes-pratiques">Bonnes Pratiques<a class="headerlink" href="#bonnes-pratiques" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Utilisez Tab</strong> pour l'auto-complétion : gain de temps énorme</li>
+<li><strong>Utilisez Ctrl+R</strong> pour rechercher dans l'historique</li>
+<li><strong>Lisez les messages d'erreur</strong> : ils sont souvent explicites</li>
+<li><strong>Testez d'abord</strong> avec <code>ls</code> ou <code>echo</code> avant des commandes destructrices</li>
+<li><strong>Faites des sauvegardes</strong> avant d'utiliser <code>rm -rf</code></li>
+<li><strong>Utilisez <code>--help</code></strong> quand vous découvrez une nouvelle commande</li>
+<li><strong>Créez des alias</strong> pour vos commandes fréquentes</li>
+<li><strong>Documentez vos scripts</strong> avec des commentaires</li>
+</ol>
+<h3 id="pour-aller-plus-loin">Pour Aller Plus Loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permanent link">¶</a></h3>
+<ul>
+<li>Apprenez <strong>vim</strong> ou <strong>nano</strong> pour éditer des fichiers dans le terminal</li>
+<li>Maîtrisez <strong>tmux</strong> ou <strong>screen</strong> pour gérer plusieurs sessions</li>
+<li>Explorez <strong>bash scripting</strong> pour automatiser vos tâches</li>
+<li>Découvrez <strong>zsh</strong> et <strong>oh-my-zsh</strong> pour un terminal amélioré</li>
+<li>Utilisez <strong>Docker</strong> pour containeriser vos applications Python</li>
+</ul>
+<h2 id="en-resume">En résumé<a class="headerlink" href="#en-resume" title="Permanent link">¶</a></h2>
+<p>Le terminal peut sembler intimidant au début, mais c'est un outil puissant qui deviendra vite indispensable. 
+Commencez par maîtriser les commandes de base (navigation, création de fichiers), puis progressez vers des usages plus avancés.</p>
+<p><strong>La pratique est la clé</strong> : utilisez le terminal quotidiennement pour vos projets Python, et vous deviendrez rapidement à l'aise.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "search.share", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
