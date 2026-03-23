@@ -1,6 +1,14 @@
+---
+date:
+  created: 2026-03-24
+
+---
+
 # Les 10 erreurs que font tous les débutants en Python
 
 Apprendre Python, c'est rapide. Le langage est lisible, concis, et pardonne beaucoup. Mais cette apparente simplicité masque une série de pièges dans lesquels presque tout le monde tombe au début. Cet article passe en revue les dix erreurs les plus fréquentes, avec des exemples concrets et les bonnes pratiques pour les éviter définitivement.
+
+<!-- more -->
 
 ## 1. Confondre les types mutables et immuables
 
