@@ -1,4 +1,4 @@
-# Les Booléens en Python
+# Les Booléens
 
 ## Introduction
 
