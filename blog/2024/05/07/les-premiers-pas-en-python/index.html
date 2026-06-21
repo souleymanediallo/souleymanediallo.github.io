@@ -1,0 +1,2479 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Souleymane Diallo">
+      
+      
+        <link rel="canonical" href="https://souleymanediallo.github.io/blog/2024/05/07/les-premiers-pas-en-python/">
+      
+      
+      
+        <link rel="next" href="../../../../2026/01/23/cr%C3%A9er-un-mini-site-web-bas%C3%A9-sur-une-api-rest-avec-flask/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Les premiers pas en Python - Développeur Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#les-premiers-pas-en-python" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../../../.." title="Développeur Python" class="md-header__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Développeur Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les premiers pas en Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../python/0-Introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../accessibilite/1-introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Accessibilité
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Développeur Python" class="md-nav__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Développeur Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/0-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/1-Installation-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/2-Terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/3-Variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/4-Commentaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commentaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/5-Nombres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/6-Affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Affichage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/7-Listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/8-Dictionnaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/9-Tuples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tuples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/10-Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/11-Booleens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Booléens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/12-Operateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opérateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/13-Instructions-conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instructions conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/14-Boucles-for/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles for
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/15-Boucles-while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/16-Fonction-range/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonction range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/17-Fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/18-Comprehension-de-listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compréhension de listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/19-Fichiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/20-Expressions-lambda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressions lambda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/21-Programmation-oriente-objet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/22-Modules-et-Packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules et packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/23-Erreurs-et-Expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erreurs et exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/24-Decorateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Décorateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/25-Iterateurs-et-generateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Itérateurs et générateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/26-Expressions-regulieres-et-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regex et parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/26-Objet-immuables-et-mutables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objets immuables et mutables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/27-Logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/28-PEP-8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEP 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/29-Fenetres-graphiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenêtres graphiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/30-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../python/31-Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accessibilité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Accessibilité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/1-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/2-historique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/3-rgaa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGAA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/4-technologie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Téchnologie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/5-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../accessibilite/6-texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-inscription-sur-replitcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Inscription sur Replit.com
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-decouvrir-le-language-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Découvrir le language Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Découvrir le language Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-les-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Les chaines de caractères
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-les-nombres" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Les nombres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-les-booleens" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Les booléens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Les listes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-les-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Les dictionnaires
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-les-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Les sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-les-tuples" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 Les tuples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-la-boucle-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 La boucle for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-la-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.10 La boucle while
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#en-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      En résumé
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Retourner à l'index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadonnées
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-05-07 00:00:00" class="md-ellipsis">7 mai 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              13 min de lecture
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<div><h1 id="les-premiers-pas-en-python">Les premiers pas en Python<a class="headerlink" href="#les-premiers-pas-en-python" title="Permanent link">¶</a></h1>
+<p>Utiliser Replit.com pour apprendre le langage Python est une excellente idée. Replit est une plateforme en ligne qui permet de coder directement dans le navigateur sans avoir besoin d'installer des outils de développement sur votre ordinateur. </p>
+<!-- more -->
+
+<h2 id="1-inscription-sur-replitcom">1. Inscription sur Replit.com<a class="headerlink" href="#1-inscription-sur-replitcom" title="Permanent link">¶</a></h2>
+<p><strong>Voici un guide étape par étape pour utiliser Replit.com afin d'apprendre Python :</strong></p>
+<p><strong>1. Créer un compte sur Replit</strong></p>
+<ul>
+<li>Allez sur <a href="https://replit.com">replit.com</a>.</li>
+<li>Cliquez sur "Sign Up" pour créer un compte. Vous pouvez vous inscrire avec votre adresse e-mail, Google, GitHub ou Facebook.</li>
+</ul>
+<p><strong>2. Créer un nouveau projet Python</strong></p>
+<ul>
+<li>Une fois connecté, cliquez sur le bouton "Create" dans le coin supérieur droit de l'écran.</li>
+<li>Sélectionnez "Python" dans la liste des langages disponibles.</li>
+<li>Donnez un nom à votre projet et cliquez sur "Create Repl".</li>
+</ul>
+<p><strong>3. Explorer l'interface de Replit</strong></p>
+<ul>
+<li><strong>Code Editor</strong> : C'est ici que vous allez écrire votre code Python.</li>
+<li><strong>Console</strong> : La console est utilisée pour voir la sortie de votre code.</li>
+<li><strong>Files</strong> : À gauche, vous pouvez gérer vos fichiers et dossiers de projet.</li>
+<li><strong>Packages</strong> : Vous pouvez installer des paquets Python en cliquant sur l'icône des paquets à gauche.</li>
+</ul>
+<p><strong>4. Écrire et exécuter votre premier programme Python</strong></p>
+<ul>
+<li>
+<p>Dans l'éditeur de code, écrivez un simple programme Python. Par exemple :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Cliquez sur le bouton "Run" en haut de l'écran pour exécuter votre programme. </p>
+</li>
+</ul>
+<p>La sortie "Hello, World!" devrait apparaître dans la console.</p>
+<h2 id="2-decouvrir-le-language-python">2. Découvrir le language Python<a class="headerlink" href="#2-decouvrir-le-language-python" title="Permanent link">¶</a></h2>
+<p>Python est un langage de programmation populaire et puissant qui peut être utilisé pour une variété de tâches, telles que la création de scripts, la construction de sites web, le développement de logiciels et la data science. Il est facile à apprendre et à comprendre, ce qui en fait un choix idéal pour les débutants et les professionnels expérimentés.</p>
+<h3 id="21-les-chaines-de-caracteres">2.1 Les chaines de caractères<a class="headerlink" href="#21-les-chaines-de-caracteres" title="Permanent link">¶</a></h3>
+<p>Les variables peuvent stocker des chaînes de caractères (strings). Une chaîne de caractères est une séquence de caractères entourée de guillemets simples (<code>'</code>) ou doubles (<code>"</code>).</p>
+<p><strong>Déclarer une variable string :</strong></p>
+<p>Une variable string peut être créée en lui assignant une valeur de type chaîne de caractères.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p><strong>Déclaration :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">player_name</span> <span class="o">=</span> <span class="s2">"Kylian"</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Afficher la valeur d'une variable string :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher la valeur de la variable :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Kylian</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Modifier la valeur d'une variable string :</strong></p>
+<p>Vous pouvez changer la valeur d'une variable string à tout moment :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">player_name</span> <span class="o">=</span> <span class="s2">"Neymar"</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Neymar</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Opérations sur les Strings :</strong></p>
+<p>Vous pouvez effectuer plusieurs opérations sur les strings, comme la concaténation, la répétition, et bien plus.</p>
+<ol>
+<li>
+<p><strong>Concaténation :</strong>
+    Vous pouvez combiner plusieurs strings en utilisant l'opérateur <code>+</code> :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">first_name</span> <span class="o">=</span> <span class="s2">"Kylian"</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">last_name</span> <span class="o">=</span> <span class="s2">"Mbappé"</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Kylian Mbappé</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Répétition :</strong>
+    Vous pouvez répéter une string en utilisant l'opérateur <code>*</code> :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">chant</span> <span class="o">=</span> <span class="s2">"Allez les bleus! "</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">chant</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Allez les bleus! Allez les bleus! Allez les bleus!</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Accéder à des caractères spécifiques :</strong></p>
+<p>Vous pouvez accéder à un caractère spécifique dans une string en utilisant des indices. Les indices commencent à 0.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">team</span> <span class="o">=</span> <span class="s2">"Paris"</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Affiche le premier caractère 'P'</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche le deuxième caractère 'a'</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Longueur d'une string :</strong></p>
+<p>Utilisez la fonction <code>len()</code> pour obtenir la longueur d'une string :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s2">"Mbappé"</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>6</code></li>
+</ul>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser et manipuler des chaînes de caractères en Python. Continuez à pratiquer en essayant de créer des variables string, en les modifiant, et en effectuant différentes opérations sur elles.</p>
+<h3 id="22-les-nombres">2.2 Les nombres<a class="headerlink" href="#22-les-nombres" title="Permanent link">¶</a></h3>
+<p>En Python, les variables peuvent également stocker des nombres, qu'ils soient entiers ou à virgule flottante (décimaux). </p>
+<p><strong>Exemples simples pour vous aider à comprendre comment les utiliser :</strong></p>
+<p><strong>Les Nombres Entiers (int) :</strong>
+Les nombres entiers sont des nombres sans décimales. Ils peuvent être positifs ou négatifs "1, 6, 4, -7, 9, 9".</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p>Déclarer une variable entière :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">kylian_number</span> <span class="o">=</span> <span class="mi">7</span>
+</code></pre></div>
+</li>
+<li>
+<p>Afficher la valeur d'une variable entière :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">kylian_number</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>7</code></li>
+</ul>
+</li>
+<li>
+<p>Modifier la valeur d'une variable entière :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">kylian_number</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">kylian_number</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>10</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Les Nombres Flottants (float) :</strong>
+Les nombres flottants sont des nombres avec des décimales. Ils permettent de représenter des valeurs plus précises.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p>Déclarer une variable flottante :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">profile</span> <span class="o">=</span> <span class="mf">1.75</span>
+</code></pre></div>
+</li>
+<li>
+<p>Afficher la valeur d'une variable flottante :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>1.75</code></li>
+</ul>
+</li>
+<li>
+<p>Modifier la valeur d'une variable flottante :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">number_height</span> <span class="o">=</span> <span class="mf">1.80</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">number_height</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>1.80</code></li>
+</ul>
+</li>
+</ol>
+<p>En suivant ces exemples, vous pouvez facilement manipuler des nombres entiers et des nombres flottants dans vos programmes Python.</p>
+<h3 id="23-les-booleens">2.3 Les booléens<a class="headerlink" href="#23-les-booleens" title="Permanent link">¶</a></h3>
+<p>Une valeur booléenne (bool) représente l'un des deux états : <code>True</code> (vrai) ou <code>False</code> (faux). Les booléens sont souvent utilisés dans les conditions et les boucles pour contrôler le flux du programme.</p>
+<p><strong>Déclarer une variable booléenne :</strong></p>
+<p>Une variable booléenne peut être créée en lui assignant une valeur de <code>True</code> ou <code>False</code>.</p>
+<p><strong>Exemples :</strong>
+1. <strong>Déclaration :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">is_winning</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">is_playing</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<ol>
+<li>
+<p><strong>Afficher la valeur d'une variable booléenne :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher la valeur de la variable :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_winning</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_playing</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>True</code> puis <code>False</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Modifier la valeur d'une variable booléenne :</strong></p>
+<p>Vous pouvez changer la valeur d'une variable booléenne à tout moment :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">is_winning</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">is_playing</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_winning</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_playing</span><span class="p">)</span>
+</code></pre></div>
+- La sortie sera : <code>False</code> puis <code>True</code>
+</li>
+</ol>
+<p><em>Utilisation des Booléens dans les Conditions</em></p>
+<p>Les booléens sont souvent utilisés dans les structures de contrôle comme les instructions <code>if</code>, <code>elif</code>, et <code>else</code>.</p>
+<ol>
+<li>
+<p><strong>Condition simple :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">is_world_cup_final</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">if</span> <span class="n">is_world_cup_final</span><span class="p">:</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"C'est la finale de la Coupe du Monde!"</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ce n'est pas la finale de la Coupe du Monde."</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>C'est la finale de la Coupe du Monde!</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Condition avec comparaison :</strong></p>
+<p>Vous pouvez utiliser des opérateurs de comparaison pour obtenir des valeurs booléennes :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">goals_kylian</span> <span class="o">=</span> <span class="mi">98</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">goals_neymar</span> <span class="o">=</span> <span class="mi">42</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">is_kylian_winning</span> <span class="o">=</span> <span class="n">goals_kylian</span> <span class="o">&gt;</span> <span class="n">goals_neymar</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_kylian_winning</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>True</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Combinaison de conditions :</strong></p>
+<p>Vous pouvez combiner plusieurs conditions en utilisant les opérateurs <code>and</code>, <code>or</code>, et <code>not</code> :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">goals_france</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">goals_brazil</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">is_france_winner</span> <span class="o">=</span> <span class="n">goals_france</span> <span class="o">&gt;</span> <span class="n">goals_brazil</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">is_coupe_du_monde</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">if</span> <span class="n">is_france_winner</span> <span class="ow">and</span> <span class="n">is_coupe_du_monde</span><span class="p">:</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"La France a gagné la Coupe du Monde!"</span><span class="p">)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"La France n'a pas gagné la Coupe du Monde."</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>La France a gagné la Coupe du Monde!</code></li>
+</ul>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser et manipuler des variables booléennes en Python, en utilisant des exemples sportifs pertinents comme Kylian Mbappé, Neymar, et la Coupe du Monde.</p>
+<h3 id="24-les-listes">2.4 Les listes<a class="headerlink" href="#24-les-listes" title="Permanent link">¶</a></h3>
+<p>En Python, une liste est une collection ordonnée de valeurs, qui peuvent être de différents types (nombres, chaînes de caractères, booléens, etc.). Les listes sont très flexibles et permettent de stocker plusieurs éléments dans une seule variable.</p>
+<p><strong>Déclarer une liste :</strong>
+Une liste peut être créée en plaçant des valeurs entre crochets <code>[]</code>, séparées par des virgules.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p><strong>Déclaration d'une liste de joueurs :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">joueurs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Afficher la liste entière :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher la liste :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Neymar', 'Lionel Messi']</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Accéder à des éléments spécifiques :</strong></p>
+<p>Vous pouvez accéder à un élément en utilisant son index (les indices commencent à 0) :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Affiche 'Kylian Mbappé'</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche 'Lionel Messi'</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Modifier un élément de la liste :</strong></p>
+<p>Vous pouvez changer la valeur d'un élément en utilisant son index :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">joueurs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Cristiano Ronaldo"</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Cristiano Ronaldo', 'Lionel Messi']</code></li>
+</ul>
+</li>
+</ol>
+<p><em>Opérations Courantes sur les Listes</em></p>
+<ol>
+<li>
+<p><strong>Ajouter des éléments à une liste :</strong></p>
+<p>Vous pouvez ajouter des éléments à la fin de la liste en utilisant la méthode <code>append()</code> :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">joueurs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Paul Pogba"</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Cristiano Ronaldo', 'Lionel Messi', 'Paul Pogba']</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Insérer des éléments à une position spécifique :</strong></p>
+<p>Utilisez la méthode <code>insert()</code> pour ajouter un élément à une position spécifique :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">joueurs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Antoine Griezmann"</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Antoine Griezmann', 'Cristiano Ronaldo', 'Lionel Messi', 'Paul Pogba']</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Supprimer des éléments de la liste :</strong></p>
+<p>Utilisez la méthode <code>remove()</code> pour supprimer un élément par sa valeur :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">joueurs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Cristiano Ronaldo"</span><span class="p">)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Antoine Griezmann', 'Lionel Messi', 'Paul Pogba']</code></li>
+</ul>
+<p>Ou utilisez la méthode <code>pop()</code> pour supprimer un élément par son index :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">joueurs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueurs</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>['Kylian Mbappé', 'Antoine Griezmann', 'Paul Pogba']</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Longueur de la liste :</strong></p>
+<p>Utilisez la fonction <code>len()</code> pour obtenir le nombre d'éléments dans la liste :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">joueurs</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>3</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Parcourir une liste :</strong></p>
+<p>Utilisez une boucle <code>for</code> pour parcourir et afficher chaque élément de la liste :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">for</span> <span class="n">joueur</span> <span class="ow">in</span> <span class="n">joueurs</span><span class="p">:</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">joueur</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera :
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Kylian Mbappé
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Antoine Griezmann
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Paul Pogba
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser et manipuler des listes en Python.</p>
+<h3 id="25-les-dictionnaires">2.5 Les dictionnaires<a class="headerlink" href="#25-les-dictionnaires" title="Permanent link">¶</a></h3>
+<p>Un dictionnaire est une collection non ordonnée de paires <strong>clé-valeur</strong>. Chaque clé dans un dictionnaire doit être unique, mais les valeurs peuvent être de n'importe quel type et peuvent être dupliquées.</p>
+<p><strong>Déclarer un dictionnaire :</strong></p>
+<p>Un dictionnaire peut être créé en plaçant des paires clé-valeur entre des accolades <code>{}</code>, séparées par des virgules.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p><strong>Déclaration d'un dictionnaire :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">joueur_info</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="s2">"nom"</span><span class="p">:</span> <span class="s2">"Kylian Mbappé"</span><span class="p">,</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="s2">"âge"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="s2">"équipe"</span><span class="p">:</span> <span class="s2">"Paris Saint-Germain"</span><span class="p">,</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    <span class="s2">"buts"</span><span class="p">:</span> <span class="mi">27</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Afficher le dictionnaire entier :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher le dictionnaire :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'nom': 'Kylian Mbappé', 'âge': 22, 'équipe': 'Paris Saint-Germain', 'buts': 27}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Accéder à des valeurs spécifiques :</strong></p>
+<p>Vous pouvez accéder à une valeur en utilisant sa clé :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">[</span><span class="s2">"nom"</span><span class="p">])</span>  <span class="c1"># Affiche 'Kylian Mbappé'</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">[</span><span class="s2">"buts"</span><span class="p">])</span>  <span class="c1"># Affiche 27</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Modifier une valeur :</strong></p>
+</li>
+</ol>
+<p>Vous pouvez changer la valeur d'une clé spécifique :
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">joueur_info</span><span class="p">[</span><span class="s2">"buts"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>- La sortie sera : `{'nom': 'Kylian Mbappé', 'âge': 22, 'équipe': 'Paris Saint-Germain', 'buts': 30}`
+</code></pre></div>
+<p><em>Opérations Courantes sur les Dictionnaires</em></p>
+<ol>
+<li>
+<p><strong>Ajouter une nouvelle paire clé-valeur :</strong></p>
+<p>Vous pouvez ajouter une nouvelle paire clé-valeur en assignant une valeur à une nouvelle clé :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">joueur_info</span><span class="p">[</span><span class="s2">"position"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Attaquant"</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'nom': 'Kylian Mbappé', 'âge': 22, 'équipe': 'Paris Saint-Germain', 'buts': 30, 'position': 'Attaquant'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Supprimer une paire clé-valeur :</strong></p>
+<p>Utilisez la méthode <code>pop()</code> pour supprimer une paire clé-valeur par sa clé :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">joueur_info</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"âge"</span><span class="p">)</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'nom': 'Kylian Mbappé', 'équipe': 'Paris Saint-Germain', 'buts': 30, 'position': 'Attaquant'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Longueur du dictionnaire :</strong></p>
+<p>Utilisez la fonction <code>len()</code> pour obtenir le nombre de paires clé-valeur dans le dictionnaire :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">joueur_info</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>4</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Parcourir un dictionnaire :</strong></p>
+<p>Utilisez une boucle <code>for</code> pour parcourir et afficher chaque clé et valeur du dictionnaire :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">for</span> <span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">joueur_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">clé</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">valeur</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera :
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>nom: Kylian Mbappé
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>équipe: Paris Saint-Germain
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>buts: 30
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>position: Attaquant
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Vérifier si une clé existe :</strong></p>
+<p>Utilisez l'opérateur <code>in</code> pour vérifier si une clé existe dans le dictionnaire :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">if</span> <span class="s2">"nom"</span> <span class="ow">in</span> <span class="n">joueur_info</span><span class="p">:</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Le nom du joueur est:"</span><span class="p">,</span> <span class="n">joueur_info</span><span class="p">[</span><span class="s2">"nom"</span><span class="p">])</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser et manipuler des dictionnaires en Python.</p>
+<h3 id="27-les-sets">2.7 Les sets<a class="headerlink" href="#27-les-sets" title="Permanent link">¶</a></h3>
+<p>En Python, un set est une collection non ordonnée et non indexée d'éléments uniques. Les sets sont utiles pour stocker des éléments distincts et effectuer des opérations mathématiques comme l'union, l'intersection, et la différence.</p>
+<p><strong>Déclarer un set :</strong></p>
+<p>Un set peut être créé en plaçant des éléments entre accolades <code>{}</code>, séparés par des virgules.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p><strong>Déclaration d'un set :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">players</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Afficher le set entier :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher le set :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie peut être dans n'importe quel ordre : <code>{'Neymar', 'Lionel Messi', 'Kylian Mbappé'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Ajouter un élément à un set :</strong></p>
+<p>Utilisez la méthode <code>add()</code> pour ajouter un élément :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">players</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"Cristiano Ronaldo"</span><span class="p">)</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'Neymar', 'Lionel Messi', 'Kylian Mbappé', 'Cristiano Ronaldo'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Supprimer un élément d'un set :</strong></p>
+<p>Utilisez la méthode <code>remove()</code> pour supprimer un élément :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">players</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Neymar"</span><span class="p">)</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'Lionel Messi', 'Kylian Mbappé', 'Cristiano Ronaldo'}</code></li>
+</ul>
+</li>
+</ol>
+<p><em>Opérations Courantes sur les Sets</em></p>
+<ol>
+<li>
+<p><strong>Union de deux sets :</strong></p>
+<p>L'union de deux sets retourne un nouveau set contenant tous les éléments uniques des deux sets.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">players_france</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Antoine Griezmann"</span><span class="p">}</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">players_brazil</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Thiago Silva"</span><span class="p">}</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="n">all_players</span> <span class="o">=</span> <span class="n">players_france</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">players_brazil</span><span class="p">)</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">all_players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'Kylian Mbappé', 'Antoine Griezmann', 'Neymar', 'Thiago Silva'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Intersection de deux sets :</strong></p>
+<p>L'intersection de deux sets retourne un nouveau set contenant les éléments communs aux deux sets.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">all_players</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">,</span> <span class="s2">"Cristiano Ronaldo"</span><span class="p">}</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="n">top_scorers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">}</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="n">common_players</span> <span class="o">=</span> <span class="n">all_players</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">top_scorers</span><span class="p">)</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">common_players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'Kylian Mbappé', 'Lionel Messi'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Différence de deux sets :</strong></p>
+<p>La différence de deux sets retourne un nouveau set contenant les éléments du premier set qui ne sont pas dans le deuxième set.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">all_players</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">,</span> <span class="s2">"Cristiano Ronaldo"</span><span class="p">}</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="n">retired_players</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Cristiano Ronaldo"</span><span class="p">}</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="n">active_players</span> <span class="o">=</span> <span class="n">all_players</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">retired_players</span><span class="p">)</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">active_players</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>{'Kylian Mbappé', 'Neymar', 'Lionel Messi'}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Vérifier l'appartenance d'un élément à un set :</strong></p>
+<p>Utilisez l'opérateur <code>in</code> pour vérifier si un élément appartient à un set :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">if</span> <span class="s2">"Kylian Mbappé"</span> <span class="ow">in</span> <span class="n">players</span><span class="p">:</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Kylian Mbappé fait partie des joueurs."</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Kylian Mbappé fait partie des joueurs.</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Parcourir un set :</strong></p>
+<p>Utilisez une boucle <code>for</code> pour parcourir et afficher chaque élément du set :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">players</span><span class="p">:</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera :
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>Kylian Mbappé
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>Lionel Messi
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>Cristiano Ronaldo
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser et manipuler des sets en Python.</p>
+<h3 id="28-les-tuples">2.8 Les tuples<a class="headerlink" href="#28-les-tuples" title="Permanent link">¶</a></h3>
+<p>Un tuple est une collection ordonnée et immuable (c'est-à-dire qu'une fois créé, il ne peut pas être modifié). Les tuples sont utiles pour stocker des groupes de valeurs hétérogènes et garantir que les données restent inchangées.</p>
+<p><strong>Déclarer un tuple :</strong></p>
+<p>Un tuple peut être créé en plaçant des éléments entre parenthèses <code>()</code>.</p>
+<p><strong>Exemples :</strong></p>
+<ol>
+<li>
+<p><strong>Déclaration d'un tuple :</strong>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">player_info</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">"Paris Saint-Germain"</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Afficher le tuple entier :</strong></p>
+<p>Utilisez la fonction <code>print()</code> pour afficher le tuple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>('Kylian Mbappé', 22, 'Paris Saint-Germain')</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Accéder à des éléments spécifiques :</strong></p>
+<p>Vous pouvez accéder à un élément en utilisant son index (les indices commencent à 0) :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Affiche 'Kylian Mbappé'</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_info</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche 'Paris Saint-Germain'</span>
+</code></pre></div>
+</li>
+</ol>
+<p><em>Opérations Courantes sur les Tuples</em></p>
+<ol>
+<li>
+<p><strong>Longueur du tuple :</strong></p>
+<p>Utilisez la fonction <code>len()</code> pour obtenir le nombre d'éléments dans le tuple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">player_info</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>3</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Concaténer des tuples :</strong></p>
+<p>Vous pouvez concaténer deux tuples en utilisant l'opérateur <code>+</code> :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="n">player_stats</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># buts, passes décisives</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="n">full_player_info</span> <span class="o">=</span> <span class="n">player_info</span> <span class="o">+</span> <span class="n">player_stats</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">full_player_info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>('Kylian Mbappé', 22, 'Paris Saint-Germain', 30, 10)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Décompacter un tuple :</strong></p>
+<p>Vous pouvez décompacter (ou "unpack") un tuple en assignant ses éléments à des variables individuelles :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">team</span> <span class="o">=</span> <span class="n">player_info</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Affiche 'Kylian Mbappé'</span>
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>   <span class="c1"># Affiche 22</span>
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="p">)</span>  <span class="c1"># Affiche 'Paris Saint-Germain'</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Vérifier l'appartenance d'un élément à un tuple :</strong></p>
+<p>Utilisez l'opérateur <code>in</code> pour vérifier si un élément appartient à un tuple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="k">if</span> <span class="s2">"Kylian Mbappé"</span> <span class="ow">in</span> <span class="n">player_info</span><span class="p">:</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Kylian Mbappé fait partie des informations du joueur."</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera : <code>Kylian Mbappé fait partie des informations du joueur.</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Parcourir un tuple :</strong></p>
+<p>Utilisez une boucle <code>for</code> pour parcourir et afficher chaque élément du tuple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">player_info</span><span class="p">:</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>La sortie sera :
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Kylian Mbappé
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>22
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>Paris Saint-Germain
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Indexation et slicing :</strong></p>
+</li>
+</ol>
+<p>Vous pouvez accéder à une portion d'un tuple en utilisant la notation de slicing :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">player_info</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>  <span class="c1"># Affiche (22, 'Paris Saint-Germain')</span>
+</code></pre></div>
+<p>Ces exemples montrent comment utiliser et manipuler des tuples en Python, en utilisant des exemples sportifs pertinents pour rendre les concepts plus compréhensibles.</p>
+<h3 id="29-la-boucle-for">2.9 La boucle <code>for</code><a class="headerlink" href="#29-la-boucle-for" title="Permanent link">¶</a></h3>
+<p>La boucle <code>for</code> est utilisée pour parcourir une séquence (comme une liste, un tuple, un dictionnaire, un set ou une chaîne de caractères) et exécuter un bloc de code pour chaque élément de cette séquence.</p>
+<p><strong>Syntaxe de base d'une boucle <code>for</code> :</strong>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>    <span class="c1"># bloc de code à exécuter pour chaque élément</span>
+</code></pre></div>
+<p>Exemple</p>
+<ol>
+<li>
+<p>Parcourir une liste
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="n">players</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="s2">"Neymar"</span><span class="p">,</span> <span class="s2">"Lionel Messi"</span><span class="p">]</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">players</span><span class="p">:</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>Kylian Mbappé
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>Neymar
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>Lionel Messi
+</code></pre></div>
+</li>
+<li>
+<p>Parcourir un tuple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="n">player_info</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Kylian Mbappé"</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">"Paris Saint-Germain"</span><span class="p">)</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">player_info</span><span class="p">:</span>
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="n">Kylian</span> <span class="n">Mbappé</span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="mi">22</span>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="n">Paris</span> <span class="n">Saint</span><span class="o">-</span><span class="n">Germain</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="210-la-boucle-while">2.10 La boucle <code>while</code><a class="headerlink" href="#210-la-boucle-while" title="Permanent link">¶</a></h3>
+<p>La boucle <code>while</code> permet de répéter l'exécution d'un bloc de code tant qu'une condition donnée est <code>True</code>. La boucle <code>while</code> est particulièrement utile lorsque vous ne savez pas à l'avance combien de fois le bloc de code doit être exécuté.</p>
+<p><strong>Syntaxe de base d'une boucle <code>while</code> :</strong>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>    <span class="c1"># bloc de code à exécuter tant que la condition est vraie</span>
+</code></pre></div>
+<p>Exemples :</p>
+<ol>
+<li>
+<p>Boucle while simple :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>0
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>1
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>2
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>3
+<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>4
+</code></pre></div>
+</li>
+<li>
+<p>Utiliser une boucle while pour calculer la somme des premiers nombres entiers :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>
+<a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+<a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>
+<a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La somme des premiers </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> nombres entiers est </span><span class="si">{</span><span class="nb">sum</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera : La somme des premiers 10 nombres entiers est 55</p>
+</li>
+<li>
+<p>Utiliser une boucle while avec une condition complexe :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a><span class="n">max_score</span> <span class="o">=</span> <span class="mi">100</span>
+<a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a>
+<a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a><span class="k">while</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="n">max_score</span><span class="p">:</span>
+<a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a>    <span class="n">score</span> <span class="o">+=</span> <span class="mi">10</span>
+<a id="__codelineno-70-6" name="__codelineno-70-6" href="#__codelineno-70-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Le score actuel est </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera : 
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>Le score actuel est 10
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>Le score actuel est 20
+<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>Le score actuel est 30
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>Le score actuel est 40
+<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>Le score actuel est 50
+<a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>Le score actuel est 60
+<a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>Le score actuel est 70
+<a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a>Le score actuel est 80
+<a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a>Le score actuel est 90
+<a id="__codelineno-71-10" name="__codelineno-71-10" href="#__codelineno-71-10"></a>Le score actuel est 100
+</code></pre></div>
+</li>
+</ol>
+<p><strong>Boucle while avec une Condition d'Arrêt</strong></p>
+<p>Il est important de s'assurer que la condition de la boucle while deviendra False à un moment donné pour éviter une boucle infinie.</p>
+<ol>
+<li>
+<p>Boucle 'while' avec une condition d'arrêt :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="n">balance</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># solde initial</span>
+<a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="n">target_balance</span> <span class="o">=</span> <span class="mi">2000</span>
+<a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># taux d'intérêt annuel</span>
+<a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="n">years</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a>
+<a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="k">while</span> <span class="n">balance</span> <span class="o">&lt;</span> <span class="n">target_balance</span><span class="p">:</span>
+<a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a>    <span class="n">balance</span> <span class="o">+=</span> <span class="n">balance</span> <span class="o">*</span> <span class="n">interest_rate</span>
+<a id="__codelineno-72-8" name="__codelineno-72-8" href="#__codelineno-72-8"></a>    <span class="n">years</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-72-9" name="__codelineno-72-9" href="#__codelineno-72-9"></a>
+<a id="__codelineno-72-10" name="__codelineno-72-10" href="#__codelineno-72-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Il faudra </span><span class="si">{</span><span class="n">years</span><span class="si">}</span><span class="s2"> ans pour atteindre un solde de </span><span class="si">{</span><span class="n">target_balance</span><span class="si">}</span><span class="s2"> euros."</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera : <strong>'Il faudra 15 ans pour atteindre un solde de 2000 euros'</strong>. </p>
+</li>
+</ol>
+<p><strong>Utilisation de break et continue dans une Boucle while</strong></p>
+<p>Les instructions break et continue peuvent être utilisées pour contrôler le flux d'exécution à l'intérieur d'une boucle while.</p>
+<ol>
+<li>
+<p>Utiliser 'break' pour sortir de la boucle :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a>        <span class="k">break</span>
+<a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-73-6" name="__codelineno-73-6" href="#__codelineno-73-6"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="mi">0</span>
+<a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a><span class="mi">1</span>
+<a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a><span class="mi">2</span>
+<a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a><span class="mi">3</span>
+<a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a><span class="mi">4</span>
+</code></pre></div>
+</li>
+<li>
+<p>Utiliser continue pour sauter à l'itération suivante :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a>        <span class="k">continue</span>
+<a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La sortie sera : 
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="mi">1</span>
+<a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a><span class="mi">3</span>
+<a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a><span class="mi">5</span>
+<a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a><span class="mi">7</span>
+<a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a><span class="mi">9</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Ces exemples montrent comment utiliser la boucle <strong>while</strong> en Python, en illustrant les concepts de base et les pratiques courantes pour rendre les boucles plus efficaces et compréhensibles.</p>
+<h2 id="en-resume">En résumé<a class="headerlink" href="#en-resume" title="Permanent link">¶</a></h2>
+<p><strong>Utiliser des tutoriels et des ressources éducatives</strong></p>
+<p>Replit offre plusieurs ressources pour apprendre Python :</p>
+<ul>
+<li><strong>Replit Teams for Education</strong> : Il y a des cours gratuits que vous pouvez suivre. Vous pouvez accéder à ces cours en cliquant sur "Teams" dans le menu principal.</li>
+<li><strong>Communauté</strong> : Replit a une communauté active où les utilisateurs partagent des projets et des tutoriels. Vous pouvez accéder à la communauté en cliquant sur "Community" dans le menu principal.</li>
+<li><strong>Docs et Tutoriels</strong> : Replit propose une documentation détaillée et des tutoriels que vous pouvez consulter. Allez sur <a href="https://docs.replit.com">docs.replit.com</a> pour trouver plus d'informations.</li>
+</ul>
+<p><strong>Pratiquer avec des exercices et des projets</strong></p>
+<p>Pour améliorer vos compétences en Python, il est crucial de pratiquer régulièrement. Voici quelques idées :</p>
+<ul>
+<li><strong>Exercices</strong> : Essayez de résoudre des exercices de codage sur des sites comme <a href="https://leetcode.com/">LeetCode</a>, <a href="https://www.hackerrank.com/">HackerRank</a>, ou <a href="https://www.codewars.com/">CodeWars</a>.</li>
+<li><strong>Projets</strong> : Créez de petits projets comme une calculatrice, un jeu simple, ou un scraper web. Cela vous aidera à appliquer ce que vous avez appris de manière pratique.</li>
+</ul>
+<p><strong>Collaborer et partager</strong></p>
+<p>Replit permet de collaborer en temps réel avec d'autres utilisateurs. Vous pouvez inviter des amis ou des collègues à rejoindre votre projet et coder ensemble.</p>
+<ul>
+<li>Cliquez sur "Invite" en haut à droite de votre projet.</li>
+<li>Entrez l'adresse e-mail des personnes avec qui vous souhaitez collaborer.</li>
+</ul>
+<p><strong>Utiliser les fonctionnalités avancées</strong></p>
+<p>Replit propose plusieurs fonctionnalités avancées, comme l'utilisation de Git pour le contrôle de version, l'intégration continue, et le déploiement d'applications web. Explorer ces fonctionnalités peut être très bénéfique à mesure que vous progressez.</p>
+<p>En suivant ces étapes, vous pourrez utiliser Replit.com de manière efficace pour apprendre et maîtriser Python. Bon apprentissage !</p></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "navigation.indexes", "search.share", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

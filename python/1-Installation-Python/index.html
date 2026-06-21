@@ -1,0 +1,2645 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Souleymane Diallo">
+      
+      
+        <link rel="canonical" href="https://souleymanediallo.github.io/python/1-Installation-Python/">
+      
+      
+        <link rel="prev" href="../0-Introduction/">
+      
+      
+        <link rel="next" href="../2-Terminal/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Installation de Python - Développeur Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-python" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Développeur Python" class="md-header__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Développeur Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation de Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0-Introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../accessibilite/1-introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Accessibilité
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Développeur Python" class="md-nav__button md-logo" aria-label="Développeur Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Développeur Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation de Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation de Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-quest-ce-que-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 — Qu'est-ce que Python ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-avant-de-commencer-verifions-si-python-est-deja-installe" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 — Avant de commencer — Vérifions si Python est déjà installé
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 — Avant de commencer — Vérifions si Python est déjà installé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sur Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sur macOS / Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-devrait-on-voir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Que devrait-on voir ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 — Installation sur Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 — Installation sur Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-telecharger-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Télécharger Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-lancer-linstallateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Lancer l'installateur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-configuration-importante-ne-pas-negliger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Configuration importante (ne pas négliger !)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-4-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 4 : Installer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-sur-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 — Installation sur macOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 — Installation sur macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-via-le-site-officiel-recommandee-pour-les-debutants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A : Via le site officiel (recommandée pour les débutants)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-via-homebrew-pour-les-plus-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B : Via Homebrew (pour les plus avancés)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-installation-sur-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 — Installation sur Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 — Installation sur Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu / Debian
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fedora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verifier-linstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 — Vérifier l'installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 — Vérifier l'installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-verifier-la-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Vérifier la version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-lancer-python-en-mode-interactif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Lancer Python en mode interactif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-un-petit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Un petit test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configurer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 — Configurer un environnement virtuel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 — Configurer un environnement virtuel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi un environnement virtuel ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer un environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activer-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activer l'environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desactiver-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Désactiver l'environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-installer-un-editeur-de-code-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 — Installer un éditeur de code (IDE)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 — Installer un éditeur de code (IDE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-visual-studio-code-vs-code-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1 : Visual Studio Code (VS Code) — Recommandé
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-pycharm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2 : PyCharm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3 : Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-votre-premier-script-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 — Votre premier script Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 — Votre premier script Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-creer-un-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Créer un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-ecrire-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Écrire du code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-executer-le-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Exécuter le script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-que-vous-devriez-voir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ce que vous devriez voir :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-problemes-courants-et-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      10 — Problèmes courants et solutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-glossaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      11 — Glossaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#et-maintenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Et maintenant ?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Commentaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commentaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-Nombres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nombres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Affichage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Dictionnaires/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Tuples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tuples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Booleens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Booléens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-Operateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opérateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-Instructions-conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instructions conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-Boucles-for/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles for
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-Boucles-while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-Fonction-range/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonction range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-Fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-Comprehension-de-listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compréhension de listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Fichiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-Expressions-lambda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressions lambda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-Programmation-oriente-objet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-Modules-et-Packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules et packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-Erreurs-et-Expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erreurs et exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-Decorateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Décorateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-Iterateurs-et-generateurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Itérateurs et générateurs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Expressions-regulieres-et-parsing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regex et parsing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-Objet-immuables-et-mutables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objets immuables et mutables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-Logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-PEP-8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEP 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-Fenetres-graphiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fenêtres graphiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Accessibilité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Accessibilité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/1-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/2-historique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/3-rgaa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RGAA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/4-technologie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Téchnologie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/5-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../accessibilite/6-texte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Texte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-quest-ce-que-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 — Qu'est-ce que Python ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-avant-de-commencer-verifions-si-python-est-deja-installe" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 — Avant de commencer — Vérifions si Python est déjà installé
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 — Avant de commencer — Vérifions si Python est déjà installé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sur Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sur-macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sur macOS / Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-devrait-on-voir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Que devrait-on voir ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 — Installation sur Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 — Installation sur Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-telecharger-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Télécharger Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-lancer-linstallateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Lancer l'installateur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-configuration-importante-ne-pas-negliger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Configuration importante (ne pas négliger !)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-4-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 4 : Installer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation-sur-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 — Installation sur macOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 — Installation sur macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-via-le-site-officiel-recommandee-pour-les-debutants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A : Via le site officiel (recommandée pour les débutants)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-via-homebrew-pour-les-plus-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B : Via Homebrew (pour les plus avancés)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-installation-sur-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 — Installation sur Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 — Installation sur Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu / Debian
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fedora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verifier-linstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 — Vérifier l'installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 — Vérifier l'installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-verifier-la-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Vérifier la version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-lancer-python-en-mode-interactif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Lancer Python en mode interactif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-un-petit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Un petit test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configurer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 — Configurer un environnement virtuel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 — Configurer un environnement virtuel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi un environnement virtuel ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer un environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activer-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activer l'environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desactiver-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Désactiver l'environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-installer-un-editeur-de-code-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 — Installer un éditeur de code (IDE)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 — Installer un éditeur de code (IDE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-visual-studio-code-vs-code-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1 : Visual Studio Code (VS Code) — Recommandé
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-pycharm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2 : PyCharm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3 : Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-votre-premier-script-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      9 — Votre premier script Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9 — Votre premier script Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-creer-un-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 : Créer un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-ecrire-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 : Écrire du code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-executer-le-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 : Exécuter le script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-que-vous-devriez-voir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ce que vous devriez voir :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-problemes-courants-et-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      10 — Problèmes courants et solutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-glossaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      11 — Glossaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#et-maintenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Et maintenant ?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="installation-python">Installation Python<a class="headerlink" href="#installation-python" title="Permanent link">¶</a></h1>
+<h2 id="1-quest-ce-que-python">1 — Qu'est-ce que Python ?<a class="headerlink" href="#1-quest-ce-que-python" title="Permanent link">¶</a></h2>
+<p>Python est un <strong>langage de programmation</strong> créé en 1991 par <strong>Guido van Rossum</strong>. 
+Il est aujourd'hui l'un des langages les plus populaires du monde pour plusieurs raisons :</p>
+<ul>
+<li>Sa syntaxe est <strong>simple et lisible</strong> (proche du français/anglais)</li>
+<li>Il est utilisé en <strong>web, data science, IA, automatisation, jeux</strong>…</li>
+<li>Il est <strong>gratuit et open source</strong></li>
+<li>Sa communauté est <strong>immense</strong> → beaucoup de ressources disponibles</li>
+</ul>
+<blockquote>
+<p><strong>Conseil pédagogique</strong> : Avant d'installer quoi que ce soit, lisez d'abord ce guide dans sa totalité. 
+Une bonne préparation évite 90% des problèmes !</p>
+</blockquote>
+<h2 id="2-avant-de-commencer-verifions-si-python-est-deja-installe">2 — Avant de commencer — Vérifions si Python est déjà installé<a class="headerlink" href="#2-avant-de-commencer-verifions-si-python-est-deja-installe" title="Permanent link">¶</a></h2>
+<p>Sur beaucoup de systèmes, Python est <strong>déjà présent</strong> par défaut. Vérifions !</p>
+<h3 id="sur-windows">Sur Windows<a class="headerlink" href="#sur-windows" title="Permanent link">¶</a></h3>
+<p>Ouvrez le <strong>Terminal</strong> (cmd) :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Touche Windows → tapez "cmd" → Entrée
+</code></pre></div>
+Puis tapez :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="sur-macos-linux">Sur macOS / Linux<a class="headerlink" href="#sur-macos-linux" title="Permanent link">¶</a></h3>
+<p>Ouvrez le <strong>Terminal</strong> et tapez :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="que-devrait-on-voir">Que devrait-on voir ?<a class="headerlink" href="#que-devrait-on-voir" title="Permanent link">¶</a></h3>
+<p>Si Python est installé, vous verrez quelque chose comme :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Python 3.12.3
+</code></pre></div>
+<blockquote>
+<p>Si vous voyez un <strong>message d'erreur</strong> comme <em>"command not found"</em>, alors Python n'est pas installé. 
+Continuez avec le guide ci-dessous selon votre système.</p>
+</blockquote>
+<h2 id="3-installation-sur-windows">3 — Installation sur Windows<a class="headerlink" href="#3-installation-sur-windows" title="Permanent link">¶</a></h2>
+<h3 id="etape-1-telecharger-python">Étape 1 : Télécharger Python<a class="headerlink" href="#etape-1-telecharger-python" title="Permanent link">¶</a></h3>
+<ol>
+<li>Rendez-vous sur le site officiel : <a href="https://www.python.org/downloads/">https://www.python.org/downloads/ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a> {:target="_blank"}</li>
+<li>Cliquez sur le bouton jaune <strong>"Download Python 3.X.X"</strong> (la dernière version stable)</li>
+</ol>
+<blockquote>
+<p>Le site détecte automatiquement votre système d'exploitation et vous propose le bon fichier.</p>
+</blockquote>
+<h3 id="etape-2-lancer-linstallateur">Étape 2 : Lancer l'installateur<a class="headerlink" href="#etape-2-lancer-linstallateur" title="Permanent link">¶</a></h3>
+<ol>
+<li>Ouvrez le fichier téléchargé (exemple : <code>python-3.12.3-amd64.exe</code>)</li>
+<li>Une fenêtre d'installation apparaît</li>
+</ol>
+<h3 id="etape-3-configuration-importante-ne-pas-negliger">Étape 3 : Configuration importante (ne pas négliger !)<a class="headerlink" href="#etape-3-configuration-importante-ne-pas-negliger" title="Permanent link">¶</a></h3>
+<p>Avant de cliquer "Install now", <strong>activez cette case</strong> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>☑ Add python.exe to PATH
+</code></pre></div>
+<blockquote>
+<p><strong>C'est crucial !</strong> Cette option permet à votre ordinateur de trouver Python depuis n'importe où. 
+Sans ça, vous aurez des problèmes plus tard.</p>
+</blockquote>
+<h3 id="etape-4-installer">Étape 4 : Installer<a class="headerlink" href="#etape-4-installer" title="Permanent link">¶</a></h3>
+<ol>
+<li>Cliquez <strong>"Install now"</strong></li>
+<li>Attendez la fin de l'installation (quelques secondes)</li>
+<li>Cliquez <strong>"Close"</strong></li>
+</ol>
+<p>Python est installé sur Windows !</p>
+<h2 id="4-installation-sur-macos">4 — Installation sur macOS<a class="headerlink" href="#4-installation-sur-macos" title="Permanent link">¶</a></h2>
+<h3 id="option-a-via-le-site-officiel-recommandee-pour-les-debutants">Option A : Via le site officiel (recommandée pour les débutants)<a class="headerlink" href="#option-a-via-le-site-officiel-recommandee-pour-les-debutants" title="Permanent link">¶</a></h3>
+<ol>
+<li>Allez sur <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a></li>
+<li>Téléchargez le dernier <strong>installer macOS</strong></li>
+<li>Ouvrez le fichier <code>.pkg</code> téléchargé</li>
+<li>Suivez les instructions sur l'écran</li>
+<li>Entrez votre mot de passe si demandé</li>
+</ol>
+<h3 id="option-b-via-homebrew-pour-les-plus-avances">Option B : Via Homebrew (pour les plus avancés)<a class="headerlink" href="#option-b-via-homebrew-pour-les-plus-avances" title="Permanent link">¶</a></h3>
+<p>Si vous avez déjà <strong>Homebrew</strong> installé, ouvrez un Terminal et tapez :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python
+</code></pre></div>
+<blockquote>
+<p><strong>Qu'est-ce que Homebrew ?</strong> C'est un "gestionnaire de paquets" pour macOS. 
+Il permet d'installer des logiciels facilement depuis le Terminal. 
+Vous pouvez le télécharger sur <a href="https://brew.sh/" target="_blank">https://brew.sh/ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a></p>
+</blockquote>
+<p>Python est installé sur macOS !</p>
+<h2 id="5-installation-sur-linux">5 — Installation sur Linux<a class="headerlink" href="#5-installation-sur-linux" title="Permanent link">¶</a></h2>
+<p>Linux est un peu plus divers car il existe beaucoup de "distributions" (Ubuntu, Fedora, Arch…). 
+Voici les commandes pour les plus courantes.</p>
+<h3 id="ubuntu-debian">Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3
+</code></pre></div>
+<h3 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>python3
+</code></pre></div>
+<h3 id="arch-linux">Arch Linux<a class="headerlink" href="#arch-linux" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>python
+</code></pre></div>
+<blockquote>
+<p><strong>Explication des commandes</strong> :
+- <code>sudo</code> = exécuter en tant qu'administrateur
+- <code>apt install</code> / <code>dnf install</code> / <code>pacman -S</code> = installer un logiciel
+- <code>update</code> = mettre à jour la liste des logiciels disponibles</p>
+</blockquote>
+<p>Python est installé sur Linux !</p>
+<h2 id="6-verifier-linstallation">6 — Vérifier l'installation<a class="headerlink" href="#6-verifier-linstallation" title="Permanent link">¶</a></h2>
+<p>Après l'installation, vérifions que tout fonctionne.</p>
+<h3 id="etape-1-verifier-la-version">Étape 1 : Vérifier la version<a class="headerlink" href="#etape-1-verifier-la-version" title="Permanent link">¶</a></h3>
+<p>Ouvrez un Terminal et tapez :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>--version<span class="w">       </span><span class="c1"># Windows</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>python3<span class="w"> </span>--version<span class="w">      </span><span class="c1"># macOS / Linux</span>
+</code></pre></div>
+<p>Vous devriez voir : <code>Python 3.12.X</code> (ou une version récente)</p>
+<h3 id="etape-2-lancer-python-en-mode-interactif">Étape 2 : Lancer Python en mode interactif<a class="headerlink" href="#etape-2-lancer-python-en-mode-interactif" title="Permanent link">¶</a></h3>
+<p>Tapez :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python<span class="w">        </span><span class="c1"># Windows</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>python3<span class="w">       </span><span class="c1"># macOS / Linux</span>
+</code></pre></div>
+Vous verrez apparaître un prompt comme celui-ci :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Python 3.12.3 (...)
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&gt;&gt;&gt; 
+</code></pre></div>
+Les trois chevrons <code>&gt;&gt;&gt;</code> signifient que Python est prêt à recevoir des commandes !
+<h3 id="etape-3-un-petit-test">Étape 3 : Un petit test<a class="headerlink" href="#etape-3-un-petit-test" title="Permanent link">¶</a></h3>
+<p>Tapez cette ligne et appuyez sur Entrée :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"Bonjour, Python !"</span><span class="p">)</span>
+</code></pre></div>
+Si vous voyez :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Bonjour, Python !
+</code></pre></div>
+Félicitations ! Python fonctionne parfaitement !
+<p>Pour quitter l'environnement interactif, tapez :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">exit</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="7-configurer-un-environnement-virtuel">7 — Configurer un environnement virtuel<a class="headerlink" href="#7-configurer-un-environnement-virtuel" title="Permanent link">¶</a></h2>
+<h3 id="pourquoi-un-environnement-virtuel">Pourquoi un environnement virtuel ?<a class="headerlink" href="#pourquoi-un-environnement-virtuel" title="Permanent link">¶</a></h3>
+<p>Imaginons que vous travaillez sur <strong>deux projets</strong> en même temps :</p>
+<ul>
+<li>Le projet A nécessite la version <strong>1.0</strong> d'une bibliothèque</li>
+<li>Le projet B nécessite la version <strong>2.0</strong> de la même bibliothèque</li>
+</ul>
+<p>Sans environnement virtuel, ces deux versions <strong>entrent en conflit</strong>. 
+L'environnement virtuel résout ce problème en créant un <strong>espace isolé</strong> pour chaque projet.</p>
+<blockquote>
+<p>C'est comme avoir plusieurs "bureaux" propres, chacun avec ses propres outils.</p>
+</blockquote>
+<h3 id="creer-un-environnement-virtuel">Créer un environnement virtuel<a class="headerlink" href="#creer-un-environnement-virtuel" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># 1. Créer un dossier pour votre projet</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>mkdir<span class="w"> </span>mon_projet
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">cd</span><span class="w"> </span>mon_projet
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># 2. Créer l'environnement virtuel</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>mon_environnement<span class="w">       </span><span class="c1"># Windows</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>mon_environnement<span class="w">      </span><span class="c1"># macOS / Linux</span>
+</code></pre></div>
+<h3 id="activer-lenvironnement-virtuel">Activer l'environnement virtuel<a class="headerlink" href="#activer-lenvironnement-virtuel" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Windows (cmd)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>mon_environnement<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Windows (PowerShell)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>mon_environnement<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># macOS / Linux</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nb">source</span><span class="w"> </span>mon_environnement/bin/activate
+</code></pre></div>
+<p>Vous remarquerez que le nom de votre environnement apparaît <strong>entre parenthèses</strong> avant votre prompt :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(mon_environnement) C:\Users\vous\mon_projet&gt;
+</code></pre></div>
+Cela confirme que l'environnement est bien <strong>activé</strong> !
+<h3 id="desactiver-lenvironnement-virtuel">Désactiver l'environnement virtuel<a class="headerlink" href="#desactiver-lenvironnement-virtuel" title="Permanent link">¶</a></h3>
+<p>Quand vous avez fini de travailler :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>deactivate
+</code></pre></div>
+<h2 id="8-installer-un-editeur-de-code-ide">8 — Installer un éditeur de code (IDE)<a class="headerlink" href="#8-installer-un-editeur-de-code-ide" title="Permanent link">¶</a></h2>
+<p>Pour écrire du code Python, vous avez besoin d'un bon éditeur. Voici les meilleurs choix :</p>
+<h3 id="option-1-visual-studio-code-vs-code-recommande">Option 1 : Visual Studio Code (VS Code) — Recommandé<a class="headerlink" href="#option-1-visual-studio-code-vs-code-recommande" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Gratuit</strong> et très populaire</li>
+<li>Très léger et rapide</li>
+<li>Téléchargez ici : <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a></li>
+</ul>
+<p>Après installation, ajoutez l'extension <strong>Python</strong> :
+1. Ouvrez VS Code
+2. Cliquez sur l'icône des extensions (à gauche)
+3. Tapez <strong>"Python"</strong>
+4. Installez l'extension officielle de Microsoft</p>
+<h3 id="option-2-pycharm">Option 2 : PyCharm<a class="headerlink" href="#option-2-pycharm" title="Permanent link">¶</a></h3>
+<ul>
+<li>Fait <strong>spécifiquement</strong> pour Python</li>
+<li>La version <strong>Community</strong> est gratuite</li>
+<li>Téléchargez ici : <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/ <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a></li>
+</ul>
+<h3 id="option-3-jupyter-notebook">Option 3 : Jupyter Notebook<a class="headerlink" href="#option-3-jupyter-notebook" title="Permanent link">¶</a></h3>
+<ul>
+<li>Parfait pour la <strong>data science</strong> et l'apprentissage</li>
+<li>Vous pouvez exécuter du code <strong>ligne par ligne</strong></li>
+<li>Installez via : <code>pip install jupyter</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Éditeur</th>
+<th>Coût</th>
+<th>Niveau</th>
+<th>Meilleur pour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VS Code</td>
+<td>Gratuit</td>
+<td>Débutant → Avancé</td>
+<td>Tout projet</td>
+</tr>
+<tr>
+<td>PyCharm</td>
+<td>Gratuit (Community)</td>
+<td>Intermédiaire → Avancé</td>
+<td>Projets Python dédiés</td>
+</tr>
+<tr>
+<td>Jupyter</td>
+<td>Gratuit</td>
+<td>Débutant</td>
+<td>Data science, apprentissage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-votre-premier-script-python">9 — Votre premier script Python<a class="headerlink" href="#9-votre-premier-script-python" title="Permanent link">¶</a></h2>
+<p>Créons ensemble votre <strong>tout premier fichier Python</strong> !</p>
+<h3 id="etape-1-creer-un-fichier">Étape 1 : Créer un fichier<a class="headerlink" href="#etape-1-creer-un-fichier" title="Permanent link">¶</a></h3>
+<ol>
+<li>Ouvrez VS Code</li>
+<li>Créez un nouveau fichier : <code>Ctrl + N</code> (ou <code>Cmd + N</code> sur Mac)</li>
+<li>Sauvegardez-le avec le nom : <strong><code>bonjour.py</code></strong></li>
+</ol>
+<blockquote>
+<p>Les fichiers Python se terminent toujours par <code>.py</code></p>
+</blockquote>
+<h3 id="etape-2-ecrire-du-code">Étape 2 : Écrire du code<a class="headerlink" href="#etape-2-ecrire-du-code" title="Permanent link">¶</a></h3>
+<p>Copiez-collez (ou tapez) ce code :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Ceci est un commentaire (une ligne qui n'est pas exécutée)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c1"># Afficher un message</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Bienvenue dans Python !"</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># Demander le prénom à l'utilisateur</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">prenom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Comment vous appelez-vous ? "</span><span class="p">)</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1"># Afficher un message personnalisé</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bonjour, </span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> ! Vous êtes désormais un programmeur Python !"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="etape-3-executer-le-script">Étape 3 : Exécuter le script<a class="headerlink" href="#etape-3-executer-le-script" title="Permanent link">¶</a></h3>
+<p>Dans VS Code, appuyez sur :
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Bouton Run  (en haut à droite)
+</code></pre></div>
+Ou depuis un Terminal :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>python<span class="w"> </span>bonjour.py<span class="w">        </span><span class="c1"># Windows</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>python3<span class="w"> </span>bonjour.py<span class="w">       </span><span class="c1"># macOS / Linux</span>
+</code></pre></div>
+<h3 id="ce-que-vous-devriez-voir">Ce que vous devriez voir :<a class="headerlink" href="#ce-que-vous-devriez-voir" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Bienvenue dans Python !
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Comment vous appelez-vous ? Marie
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Bonjour, Marie ! Vous êtes désormais un programmeur Python !
+</code></pre></div>
+<p>Vous avez écrit et exécuté votre premier programme Python !</p>
+<h2 id="10-problemes-courants-et-solutions">10 — Problèmes courants et solutions<a class="headerlink" href="#10-problemes-courants-et-solutions" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problème</th>
+<th>Cause probable</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'python' is not recognized</code></td>
+<td>Python n'est pas dans le PATH</td>
+<td>Réinstaller avec l'option "Add to PATH" activée</td>
+</tr>
+<tr>
+<td><code>Permission denied</code></td>
+<td>Droits insuffisants</td>
+<td>Utiliser <code>sudo</code> (Linux/Mac) ou exécuter en admin (Windows)</td>
+</tr>
+<tr>
+<td><code>ModuleNotFoundError</code></td>
+<td>Bibliothèque non installée</td>
+<td>Installer avec <code>pip install nom_bibliothèque</code></td>
+</tr>
+<tr>
+<td>Deux versions de Python</td>
+<td>Plusieurs versions installées</td>
+<td>Utiliser <code>python3</code> ou spécifier le chemin exact</td>
+</tr>
+<tr>
+<td><code>SyntaxError</code></td>
+<td>Erreur dans le code</td>
+<td>Vérifier les guillemets, les deux-points <code>:</code>, l'indentation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-glossaire">11 — Glossaire<a class="headerlink" href="#11-glossaire" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python</strong></td>
+<td>Langage de programmation interprété créé en 1991</td>
+</tr>
+<tr>
+<td><strong>Terminal / CMD</strong></td>
+<td>Fenêtre noire où on tape des commandes texte</td>
+</tr>
+<tr>
+<td><strong>PATH</strong></td>
+<td>Liste des dossiers où l'ordinateur cherche les programmes</td>
+</tr>
+<tr>
+<td><strong>pip</strong></td>
+<td>Gestionnaire de paquets Python (pour installer des bibliothèques)</td>
+</tr>
+<tr>
+<td><strong>Environnement virtuel</strong></td>
+<td>Espace isolé pour un projet, évite les conflits</td>
+</tr>
+<tr>
+<td><strong>IDE</strong></td>
+<td>Éditeur de code spécialisé pour la programmation</td>
+</tr>
+<tr>
+<td><strong>.py</strong></td>
+<td>Extension des fichiers Python</td>
+</tr>
+<tr>
+<td><strong>print()</strong></td>
+<td>Fonction Python qui affiche du texte</td>
+</tr>
+<tr>
+<td><strong>input()</strong></td>
+<td>Fonction Python qui demande une donnée à l'utilisateur</td>
+</tr>
+<tr>
+<td><strong>Bibliothèque</strong></td>
+<td>Ensemble de fonctions pré-écrites pour vous aider</td>
+</tr>
+</tbody>
+</table>
+<h2 id="et-maintenant">Et maintenant ?<a class="headerlink" href="#et-maintenant" title="Permanent link">¶</a></h2>
+<p>Vous avez installé Python avec succès ! Voici les prochaines étapes suggérées :</p>
+<ol>
+<li>Explorez la <a href="https://docs.python.org/3/" target="_blank">documentation officielle <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span></a></li>
+<li>Construisez des <strong>petits projets</strong> pour vous familiariser</li>
+</ol>
+<blockquote>
+<p><strong>Rappel</strong> : La programmation s'apprend avant tout en <strong>pratiquant</strong>. 
+N'ayez pas peur de faire des erreurs — c'est le meilleur moyen d'apprendre !</p>
+</blockquote></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "search.share", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
